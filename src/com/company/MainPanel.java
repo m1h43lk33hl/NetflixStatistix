@@ -16,6 +16,14 @@ public class MainPanel extends JPanel {
 
         this.setBackground(Color.gray);
 
+        SeriesPanel seriesPanel = new SeriesPanel();
+        seriesPanel.setName("seriesPanel");
+        this.add(seriesPanel, seriesPanel.getName());
+
+        FilmsPanel filmsPanel = new FilmsPanel();
+        filmsPanel.setName("filmsPanel");
+        this.add(filmsPanel, filmsPanel.getName());
+
         AccountsPanel accountsPanel = new AccountsPanel();
         accountsPanel.setName("accountsPanel");
         this.add(accountsPanel, accountsPanel.getName());

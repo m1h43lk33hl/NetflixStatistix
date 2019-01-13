@@ -31,12 +31,6 @@ public class SideMenu extends JPanel {
         sideMenuButtonList.put(3, "Series");
         sideMenuButtonList.put(4, "Films");
 
-        List<String> buttonTitleList = new ArrayList<String>();
-        buttonTitleList.add("Account overzicht");
-        buttonTitleList.add("Profiel overzicht");
-        buttonTitleList.add("Series");
-        buttonTitleList.add("Films");
-
         BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
 
         this.setLayout(layout);
@@ -108,6 +102,16 @@ class sideMenuButtonActionListener implements ActionListener
 
                     case 2:
                         mainCardLayout.show(p, "profilesPanel");
+                        break;
+
+                    case 3:
+                        mainCardLayout.show(p, "seriesPanel");
+                        break;
+
+                    case 4:
+                        mainCardLayout.show(p, "filmsPanel");
+                        break;
+
 
                 }
 

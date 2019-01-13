@@ -60,7 +60,7 @@ public class AccountsPanel extends JPanel {
         JButton filterAccountButton = new JButton("Filter");
 
 
-        String[] accountFilterBoxOptions = {"Gelijk aan", "Groter dan", "Kleiner dan"};
+        String[] accountFilterBoxOptions = {"Gelijk aan", "Kleiner dan", "Groter dan"};
         JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
 
         secondComponentPanel.add(filterAccountsLabel);
@@ -72,7 +72,7 @@ public class AccountsPanel extends JPanel {
         innerBoxPanel.add(firstComponentPanel);
 
         // Create and add filler panel
-        fillerPanel.add(Box.createRigidArea(new Dimension(0,30))); // Create space between buttons
+        fillerPanel.add(Box.createRigidArea(new Dimension(0,15))); // Create space between buttons
         fillerPanel.setBackground(Color.gray);
         innerBoxPanel.add(fillerPanel);
 
