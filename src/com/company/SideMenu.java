@@ -2,13 +2,17 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SideMenu extends JPanel {
 
     private int buttonWidth = 250;
-    private int buttonHeight = 40;
+    private int buttonHeight = 70;
 
     public SideMenu()
     {
@@ -20,6 +24,13 @@ public class SideMenu extends JPanel {
      */
     private void createComponents()
     {
+        Map<Integer, String> sideMenuButtonList = new HashMap<Integer, String>();
+
+        sideMenuButtonList.put(1, "Account overzicht");
+        sideMenuButtonList.put(2, "Profiel overzicht");
+        sideMenuButtonList.put(3, "Series");
+        sideMenuButtonList.put(4, "Films");
+
         List<String> buttonTitleList = new ArrayList<String>();
         buttonTitleList.add("Account overzicht");
         buttonTitleList.add("Profiel overzicht");
@@ -34,8 +45,10 @@ public class SideMenu extends JPanel {
         // Add initial space
         this.add(Box.createRigidArea(new Dimension(0,90)));
 
-        for(String buttonTitle : buttonTitleList)
-        {
+        for ( Map.Entry<Integer, String> entry : sideMenuButtonList.entrySet()) {
+            int buttonOffset = entry.getKey();
+            String buttonTitle = entry.getValue();
+
             JButton button = new JButton();
 
             // Set button size
@@ -48,11 +61,58 @@ public class SideMenu extends JPanel {
             button.setBackground(new Color(39, 39, 39));
             button.setForeground(new Color(225,8,19));
             button.setFocusPainted(false);
+            button.setFont(new Font("Segoe UI", Font.BOLD, 18));
 
+            // Set button offset for cardLayout
+            button.setName(Integer.toString(buttonOffset));
+
+            button.addActionListener(new sideMenuButtonActionListener(this));
             this.add(button);
 
             // Create space between buttons
             this.add(Box.createRigidArea(new Dimension(0,20)));
         }
+    }
+}
+
+class sideMenuButtonActionListener implements ActionListener
+{
+
+    private SideMenu sideMenu;
+
+    public sideMenuButtonActionListener(SideMenu sideMenu)
+    {
+        this.sideMenu = sideMenu;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+
+        for(Component comp : sideMenu.getRootPane().getContentPane().getComponents()){
+
+            if(comp.getName() == "mainPanel")
+            {
+                // Get buttonOffset
+                JButton buttonClicked = (JButton)actionEvent.getSource();
+                int buttonOffset = Integer.parseInt(buttonClicked.getName());
+
+                MainPanel p = (MainPanel)comp;
+                CardLayout mainCardLayout = p.getCardLayout();
+
+                // Select names of mapped button offsets to layouts within cardLayout
+                switch(buttonOffset)
+                {
+                    case 1:
+                        mainCardLayout.show(p, "accountsPanel");
+                        break;
+
+                    case 2:
+                        mainCardLayout.show(p, "profilesPanel");
+
+                }
+
+            }
+        }
+
     }
 }

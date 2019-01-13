@@ -32,6 +32,8 @@ public class NetflixStatistixUI implements Runnable {
 
     private void addElements(Container container)
     {
+        JPanel mainContainer = new JPanel();
+
         container.add(new SouthBar(), BorderLayout.SOUTH);
         container.add(new SideMenu(), BorderLayout.WEST);
         container.add(new MainPanel());
