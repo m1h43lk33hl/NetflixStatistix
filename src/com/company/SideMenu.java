@@ -12,6 +12,14 @@ public class SideMenu extends JPanel {
 
     public SideMenu()
     {
+        this.createComponents();
+    }
+
+    /**
+     * Creates SideMenu components
+     */
+    private void createComponents()
+    {
         List<String> buttonTitleList = new ArrayList<String>();
         buttonTitleList.add("Account overzicht");
         buttonTitleList.add("Profiel overzicht");
@@ -37,7 +45,8 @@ public class SideMenu extends JPanel {
             button.setText(buttonTitle);
 
             this.add(button);
-            this.add(Box.createRigidArea(new Dimension(0,20))); // Create space between buttons
+            // Create space between buttons
+            this.add(Box.createRigidArea(new Dimension(0,20)));
         }
     }
 }

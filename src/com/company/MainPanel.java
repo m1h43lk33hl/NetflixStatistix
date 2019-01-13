@@ -10,5 +10,7 @@ public class MainPanel extends JPanel {
         this.setBackground(Color.gray);
 
         this.add(new AccountsPanel());
+        this.add(new ProfilesPanel());
+
     }
 }

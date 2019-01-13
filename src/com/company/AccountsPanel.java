@@ -1,130 +1,103 @@
 package com.company;
 
+import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class AccountsPanel extends JPanel {
 
-    public AccountsPanel() {
-
+    public AccountsPanel()
+    {
         this.setBackground(Color.gray);
-        this.setLayout(new GridBagLayout());
-
-        GridBagConstraints c = new GridBagConstraints();
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.anchor = GridBagConstraints.NORTHWEST;
-        c.weightx = 1.0;
-        c.weighty = 1.0;
-        c.insets = new Insets(10, 10, 10, 10);
-
-        JComboBox<String> accountBox = new JComboBox<>(this.loadAccountNames());
-        JButton loadAccountButton = new JButton();
-        JLabel selectAccountLabel = new JLabel("Selecteer account:");
-
-        loadAccountButton.setMaximumSize(new Dimension(100, 25));
-        loadAccountButton.setPreferredSize(new Dimension(100, 25));
-
-        loadAccountButton.setText("Laad");
-
-        c.gridy = 0;
-        this.add(selectAccountLabel, c);
-
-        c.gridx = 0;
-        c.gridy++;
-        this.add(accountBox, c);
-
-        c.gridwidth = 1;
-        c.gridx = 1;
-        c.fill = GridBagConstraints.NONE;
-        this.add(loadAccountButton, c);
-
-        // Filler
-        int mgridy = c.gridy + 1;
-
-        for (int x = mgridy; x < (mgridy + 1); x++) {
-            JLabel filler = new JLabel("");
-            c.gridx = 0;
-            c.gridy = x;
-            this.add(filler, c);
-        }
-
-        JLabel requestAccountLabel = new JLabel("Filter account selectie:");
-        c.gridy++;
-        c.gridx = 0;
-        this.add(requestAccountLabel, c);
-
-        JLabel requestAccountLabel1 = new JLabel("Filter accounts ");
-        String[] requestAccountComparisonBoxOptions = {"gelijk aan", "groter dan", "kleiner dan"};
-        JLabel requestAccountLabel2 = new JLabel("aantal profielen in account:");
-        JComboBox<String> requestAccountComparisonBox = new JComboBox<String>(requestAccountComparisonBoxOptions);
-        JTextField requestAccountTextfield = new JTextField("Jemoder");
-        requestAccountTextfield.setPreferredSize(new Dimension(130, 30));
-        requestAccountTextfield.setMinimumSize(requestAccountTextfield.getPreferredSize()); // Bug fix
-
-        c.gridy++;
-        c.gridx = 0;
-        this.add(requestAccountLabel1, c);
-        c.fill = GridBagConstraints.VERTICAL;
-        c.anchor = GridBagConstraints.NORTH;
-        System.out.println(c.gridy);
-        c.gridx = 1;
-        this.add(requestAccountComparisonBox, c);
-        c.gridx = 2;
-        this.add(requestAccountLabel2, c);
-        c.gridx = 3;
-        this.add(requestAccountTextfield, c);
-
-        c.gridx = 0;
-
-        JPanel p = new JPanel();
-        p.setLayout(new FlowLayout(FlowLayout.LEFT));
-        p.setBackground(Color.gray);
-
-
-        p.setAlignmentX(Component.LEFT_ALIGNMENT);
-        requestAccountLabel1.setHorizontalAlignment(SwingConstants.LEFT);
-        p.add(requestAccountLabel1);
-        p.add(requestAccountComparisonBox);
-        p.add(requestAccountLabel2);
-        p.add(requestAccountTextfield);
-        c.gridy++;
-        c.anchor = GridBagConstraints.WEST;
-        this.add(p, c);
-
-        JButton filterAccountButton = new JButton("Filter");
-        filterAccountButton.setMaximumSize(new Dimension(100, 25));
-        filterAccountButton.setPreferredSize(new Dimension(100, 25));
-        c.gridy++;
-        c.gridx = 0;
-
-        c.fill = GridBagConstraints.NONE;
-        this.add(filterAccountButton, c);
-        c.fill = GridBagConstraints.HORIZONTAL;
-
-
-        // Fillers
-        mgridy = c.gridy + 1;
-
-        for (int x = mgridy; x < (mgridy + 15); x++) {
-            JLabel filler = new JLabel("");
-            c.gridx = 3;
-            c.gridy = x;
-            this.add(filler, c);
-        }
-
+        this.createComponents();
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     }
 
 
     /**
-     * Returns list of accounts
+     * Create AccountsPanel components
+     */
+    private void createComponents()
+    {
+
+        // Create panels
+        JPanel innerFlowPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel innerBoxPanel = new JPanel();
+        innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
+        JPanel firstComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel secondComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel fillerPanel = new JPanel();
+
+
+        // Set colors
+        innerFlowPanel.setBorder(BorderFactory.createTitledBorder("Account"));
+        innerFlowPanel.setBackground(Color.gray);
+        innerBoxPanel.setBackground(Color.gray);
+        firstComponentPanel.setBackground(Color.gray);
+        secondComponentPanel.setBackground(Color.gray);
+
+
+        JLabel selectProfileLabel = new JLabel("Selecteer account: ");
+
+        JComboBox<String> selectProfileBox = new JComboBox<>(this.returnProfileNames());
+        selectProfileBox.setMinimumSize(new Dimension(230, 25));
+        selectProfileBox.setPreferredSize(new Dimension(230, 25));
+
+        JButton selectProfileButton = new JButton("Selecteer");
+
+        firstComponentPanel.add(selectProfileLabel);
+        firstComponentPanel.add(selectProfileBox);
+        firstComponentPanel.add(selectProfileButton);
+
+        innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel filterAccountsLabel = new JLabel("Filter accounts");
+        JLabel filterAccountsLabelBasedOn = new JLabel("aantal profielen in account");
+        JTextField filterProfileAmountTextField = new JTextField();
+        filterProfileAmountTextField.setPreferredSize(new Dimension(70, 25));
+        JButton filterAccountButton = new JButton("Filter");
+
+
+        String[] accountFilterBoxOptions = {"Gelijk aan", "Groter dan", "Kleiner dan"};
+        JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
+
+        secondComponentPanel.add(filterAccountsLabel);
+        secondComponentPanel.add(accountFilterBox);
+        secondComponentPanel.add(filterAccountsLabelBasedOn);
+        secondComponentPanel.add(filterProfileAmountTextField);
+        secondComponentPanel.add(filterAccountButton);
+
+        innerBoxPanel.add(firstComponentPanel);
+
+        // Create and add filler panel
+        fillerPanel.add(Box.createRigidArea(new Dimension(0,30))); // Create space between buttons
+        fillerPanel.setBackground(Color.gray);
+        innerBoxPanel.add(fillerPanel);
+
+        innerBoxPanel.add(secondComponentPanel);
+        innerFlowPanel.add(innerBoxPanel);
+        this.add(innerFlowPanel);
+
+        // Create space for panel alignment
+        for(int x = 0; x < 3; x++)
+        {
+
+            fillerPanel = new JPanel();
+            fillerPanel.setBackground(Color.gray);
+            this.add(fillerPanel);
+        }
+    }
+
+    /**
+     * Returns a string array of names of accounts by selected profile
      *
      * @return
      */
-    private String[] loadAccountNames() {
-        String[] s = {"aaaaaaaa", "bcccccccc"};
-
-        return s;
+    private String[] returnProfileNames(){
+        String[] x = {"asjdashdaskjh", "asdjsaiodjasd", "ajdkadjsaljlsdj"};
+        return x;
 
     }
 }
