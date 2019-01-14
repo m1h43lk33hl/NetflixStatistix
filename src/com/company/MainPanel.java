@@ -16,13 +16,6 @@ public class MainPanel extends JPanel {
 
         this.setBackground(Color.gray);
 
-        SeriesPanel seriesPanel = new SeriesPanel();
-        seriesPanel.setName("seriesPanel");
-        this.add(seriesPanel, seriesPanel.getName());
-
-        FilmsPanel filmsPanel = new FilmsPanel();
-        filmsPanel.setName("filmsPanel");
-        this.add(filmsPanel, filmsPanel.getName());
 
         AccountsPanel accountsPanel = new AccountsPanel();
         accountsPanel.setName("accountsPanel");
@@ -31,6 +24,15 @@ public class MainPanel extends JPanel {
         ProfilesPanel profilesPanel = new ProfilesPanel();
         profilesPanel.setName("profilesPanel");
         this.add(profilesPanel, profilesPanel.getName());
+
+        FilmsPanel filmsPanel = new FilmsPanel();
+        filmsPanel.setName("filmsPanel");
+        this.add(filmsPanel, filmsPanel.getName());
+
+        SeriesPanel seriesPanel = new SeriesPanel();
+        seriesPanel.setName("seriesPanel");
+        this.add(seriesPanel, seriesPanel.getName());
+
     }
 
     public CardLayout getCardLayout()

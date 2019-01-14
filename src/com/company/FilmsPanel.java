@@ -53,9 +53,10 @@ public class FilmsPanel extends JPanel {
         JTable filmsTable = new JTable(data, columns);
 
         JScrollPane tablePane = new JScrollPane(filmsTable);
-        tablePane.setPreferredSize(new Dimension(500, 190));
-        tablePane.setMaximumSize(new Dimension(500, 190));
 
+        // Manually set size of tablePane
+        tablePane.setPreferredSize(new Dimension(900, 190));
+        tablePane.setMaximumSize(new Dimension(900, 190));
 
 
         // Add components to first component panel

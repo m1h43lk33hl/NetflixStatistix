@@ -1,6 +1,14 @@
 package com.company;
 
 import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +18,6 @@ public class SeriesPanel extends JPanel {
 
     public SeriesPanel()
     {
-//        ChartPanel CP = new ChartPanel(chart);
-
         this.setBackground(Color.gray);
         this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -31,6 +37,7 @@ public class SeriesPanel extends JPanel {
         JPanel thirdComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel secondComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel forthComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel fifthComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         JPanel fillerPanel = new JPanel();
 
@@ -72,12 +79,12 @@ public class SeriesPanel extends JPanel {
         JLabel filterAccountsLabel = new JLabel("Bekeken door:");
         JButton filterAccountButton = new JButton("Filter");
 
-
-        String[] accountFilterBoxOptions = {"Profiel", "Account"};
+        String[] accountFilterBoxOptions = {"Account", "Iedereen"};
         JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
 
         thirdComponentPanel.add(filterAccountsLabel);
         thirdComponentPanel.add(accountFilterBox);
+        thirdComponentPanel.add(filterAccountButton);
 
         // add components to forth component panel
         JLabel timeSpanLabel = new JLabel("Tijdsduur:");
@@ -88,29 +95,41 @@ public class SeriesPanel extends JPanel {
         String[] ageIndicationFilterBoxOptions = {"Allemaal", "6", "9", "12", "16"};
         JComboBox<String> ageIndicationFilterBox = new JComboBox<>(ageIndicationFilterBoxOptions);
 
-        forthComponentPanel.add(timeSpanLabel);
-        forthComponentPanel.add(timeSpanFilterBox);
-        forthComponentPanel.add(ageIndicationLabel);
-        forthComponentPanel.add(ageIndicationFilterBox);
-        forthComponentPanel.add(filterAccountButton);
+        JButton selectSerieButton = new JButton("Selecteer");
+
+        forthComponentPanel.add(selectSerieButton);
 
 
+        // JCHART
+        JFreeChart barChart = ChartFactory.createBarChart(
+                "Gemiddeld % bekeken van tijdsduur per aflevering",
+                "Category",
+                "Score",
+                createDataset(),
+                PlotOrientation.VERTICAL,
+                true, true, false);
 
+        ChartPanel chartPanel = new ChartPanel( barChart );
+        chartPanel.setPreferredSize(new Dimension(900, 190));
+        chartPanel.setMinimumSize(new Dimension(900, 190));
 
+        fifthComponentPanel.add(chartPanel);
 
         innerBoxPanel.add(firstComponentPanel);
-
-
-        // Create and add filler panel
-        fillerPanel.add(Box.createRigidArea(new Dimension(0,30))); // Create space between buttons
-        fillerPanel.setBackground(Color.gray);
-        innerBoxPanel.add(fillerPanel);
-
-        innerBoxPanel.add(secondComponentPanel);
-        innerBoxPanel.add(thirdComponentPanel);
         innerBoxPanel.add(forthComponentPanel);
 
+        // Create and add filler panel
+        fillerPanel.add(Box.createRigidArea(new Dimension(0,15))); // Create space between buttons
+        fillerPanel.setBackground(Color.gray);
+
+
+        innerBoxPanel.add(fillerPanel);
+        innerBoxPanel.add(fifthComponentPanel);
+        innerBoxPanel.add(secondComponentPanel);
+        innerBoxPanel.add(thirdComponentPanel);
+
         innerFlowPanel.add(innerBoxPanel);
+
         this.add(innerFlowPanel);
 
         // Create space for panel alignment
@@ -161,4 +180,44 @@ public class SeriesPanel extends JPanel {
         return tableData;
 
     }
+
+    private CategoryDataset createDataset( ) {
+
+        // Gebruiker of profiel
+        final String gebruiker = "Gebruiker";
+
+        // Episode name
+        final String speed = "Speed";
+        final String millage = "Millage";
+        final String userrating = "User Rating";
+        final String aa = "asd";
+        final String bb = "c";
+        final String cc = "iasdo";
+        final String dd = "asdasdas";
+        final String ee = "asdas";
+        final String ff = "asdasdi";
+        final String gg = "asu0das";
+
+
+        final DefaultCategoryDataset dataset =
+                new DefaultCategoryDataset( );
+
+        dataset.addValue( 1.0 , gebruiker , speed );
+        dataset.addValue( 3.0 , gebruiker , userrating );
+        dataset.addValue( 5.0 , gebruiker , ff );
+        dataset.addValue( 5.0 , gebruiker , aa );
+
+        dataset.addValue( 5.0 , gebruiker , speed );
+        dataset.addValue( 6.0 , gebruiker , ee );
+        dataset.addValue( 10.0 , gebruiker , gg );
+        dataset.addValue( 4.0 , gebruiker , bb );
+
+        dataset.addValue( 2.0 , gebruiker , dd );
+        dataset.addValue( 3.0 , gebruiker , millage );
+        dataset.addValue( 6.0 , gebruiker , cc );
+
+        return dataset;
+    }
+
+
 }

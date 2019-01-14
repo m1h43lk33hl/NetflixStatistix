@@ -61,7 +61,7 @@ public class ProfilesPanel extends JPanel {
         this.add(innerFlowPanel);
 
         // Create space for panel alignment
-        for(int x = 0; x < 3; x++)
+        for(int x = 0; x < 20; x++)
         {
             fillerPanel = new JPanel();
             fillerPanel.setBackground(Color.gray);
