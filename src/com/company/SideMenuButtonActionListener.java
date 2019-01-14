@@ -5,11 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class sideMenuButtonActionListener implements ActionListener
+public class SideMenuButtonActionListener implements ActionListener
 {
     private SideMenu sideMenu;
 
-    public sideMenuButtonActionListener(SideMenu sideMenu)
+    public SideMenuButtonActionListener(SideMenu sideMenu)
     {
         this.sideMenu = sideMenu;
     }

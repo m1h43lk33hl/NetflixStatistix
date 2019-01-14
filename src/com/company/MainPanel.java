@@ -17,21 +17,26 @@ public class MainPanel extends JPanel {
         this.setBackground(Color.gray);
 
 
-        AccountsPanel accountsPanel = new AccountsPanel();
-        accountsPanel.setName("accountsPanel");
-        this.add(accountsPanel, accountsPanel.getName());
 
         ProfilesPanel profilesPanel = new ProfilesPanel();
+        JComboBox<String> selectProfileBox = profilesPanel.getSelectProfileBox();
         profilesPanel.setName("profilesPanel");
-        this.add(profilesPanel, profilesPanel.getName());
+
+        AccountsPanel accountsPanel = new AccountsPanel(selectProfileBox);
+        accountsPanel.setName("accountsPanel");
 
         FilmsPanel filmsPanel = new FilmsPanel();
         filmsPanel.setName("filmsPanel");
-        this.add(filmsPanel, filmsPanel.getName());
 
         SeriesPanel seriesPanel = new SeriesPanel();
         seriesPanel.setName("seriesPanel");
+
+        this.add(accountsPanel, accountsPanel.getName());
+        this.add(profilesPanel, profilesPanel.getName());
+        this.add(filmsPanel, filmsPanel.getName());
         this.add(seriesPanel, seriesPanel.getName());
+
+
 
     }
 

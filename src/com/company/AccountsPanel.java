@@ -1,18 +1,26 @@
 package com.company;
 
-import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
-
 import javax.swing.*;
 import java.awt.*;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class AccountsPanel extends JPanel {
 
-    public AccountsPanel()
+    private JComboBox<String> selectProfileBox;
+
+    public AccountsPanel(JComboBox<String> selectProfileBox)
     {
+        // Add for reference to profilePanel for actionListener
+        this.selectProfileBox = selectProfileBox;
+
         this.setBackground(Color.gray);
         this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        this.setName("accountsPanel");
     }
 
     /**
@@ -40,14 +48,15 @@ public class AccountsPanel extends JPanel {
 
         JLabel selectProfileLabel = new JLabel("Selecteer account: ");
 
-        JComboBox<String> selectProfileBox = new JComboBox<>(this.returnProfileNames());
-        selectProfileBox.setMinimumSize(new Dimension(230, 25));
-        selectProfileBox.setPreferredSize(new Dimension(230, 25));
+        JComboBox<String> selectAccountBox = new JComboBox<>(this.returnAccountNames().toArray(new String[0]));
+        selectAccountBox.setMinimumSize(new Dimension(230, 25));
+        selectAccountBox.setPreferredSize(new Dimension(230, 25));
 
         JButton selectProfileButton = new JButton("Selecteer");
+        selectProfileButton.addActionListener(new AccountsPanelSelectActionListener(this.selectProfileBox, selectAccountBox));
 
         firstComponentPanel.add(selectProfileLabel);
-        firstComponentPanel.add(selectProfileBox);
+        firstComponentPanel.add(selectAccountBox);
         firstComponentPanel.add(selectProfileButton);
 
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -57,10 +66,10 @@ public class AccountsPanel extends JPanel {
         JTextField filterProfileAmountTextField = new JTextField();
         filterProfileAmountTextField.setPreferredSize(new Dimension(70, 25));
         JButton filterAccountButton = new JButton("Filter");
-
-
         String[] accountFilterBoxOptions = {"Gelijk aan", "Kleiner dan", "Groter dan"};
         JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
+
+        filterAccountButton.addActionListener(new AccountsPanelFilterActionListener(filterProfileAmountTextField, accountFilterBox, selectAccountBox));
 
         secondComponentPanel.add(filterAccountsLabel);
         secondComponentPanel.add(accountFilterBox);
@@ -89,13 +98,26 @@ public class AccountsPanel extends JPanel {
     }
 
     /**
-     * Returns a string array of names of accounts by selected profile
+     * Returns a list of account names of accounts by selected profile
      *
      * @return
      */
-    private String[] returnProfileNames(){
-        String[] x = {"asjdashdaskjh", "asdjsaiodjasd", "ajdkadjsaljlsdj"};
-        return x;
+    public List<String> returnAccountNames() {
+        List<String> accountList = new ArrayList<String>();
 
+        try {
+            Database db = Database.getInstance();
+            ResultSet rs = db.query("SELECT Naam FROM Account");
+
+            while (rs.next()) {
+                accountList.add(rs.getString("Naam"));
+            }
+
+            return accountList;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 }

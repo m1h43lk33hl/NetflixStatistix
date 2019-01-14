@@ -2,11 +2,7 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class SideMenu extends JPanel {
@@ -60,7 +56,7 @@ public class SideMenu extends JPanel {
             // Set button offset for cardLayout
             button.setName(Integer.toString(buttonOffset));
 
-            button.addActionListener(new sideMenuButtonActionListener(this));
+            button.addActionListener(new SideMenuButtonActionListener(this));
             this.add(button);
 
             // Create space between buttons

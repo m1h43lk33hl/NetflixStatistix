@@ -7,12 +7,16 @@ import java.awt.*;
 
 public class ProfilesPanel extends JPanel {
 
+    private JComboBox<String> selectProfileBox = new JComboBox<>(this.returnProfileNames());
+
+
     public ProfilesPanel()
     {
         this.setBackground(Color.gray);
         this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        this.setName("profilesPanel");
     }
 
 
@@ -39,14 +43,14 @@ public class ProfilesPanel extends JPanel {
 
         JLabel selectProfileLabel = new JLabel("Selecteer profiel: ");
 
-        JComboBox<String> selectProfileBox = new JComboBox<>(this.returnProfileNames());
-        selectProfileBox.setMinimumSize(new Dimension(230, 25));
-        selectProfileBox.setPreferredSize(new Dimension(230, 25));
+        this.selectProfileBox.setMinimumSize(new Dimension(230, 25));
+        this.selectProfileBox.setPreferredSize(new Dimension(230, 25));
+        this.selectProfileBox.setName("selectProfileBox");
 
         JButton selectProfileButton = new JButton("Selecteer");
 
         firstComponentPanel.add(selectProfileLabel);
-        firstComponentPanel.add(selectProfileBox);
+        firstComponentPanel.add(this.selectProfileBox);
         firstComponentPanel.add(selectProfileButton);
 
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -67,6 +71,11 @@ public class ProfilesPanel extends JPanel {
             fillerPanel.setBackground(Color.gray);
             this.add(fillerPanel);
         }
+    }
+
+    public JComboBox<String> getSelectProfileBox()
+    {
+        return this.selectProfileBox;
     }
 
     /**
