@@ -49,7 +49,7 @@ public class AccountsPanelFilterActionListener implements ActionListener
         try {
 
             Database database = Database.getInstance();
-            ResultSet resultSet = database.query("SELECT Account.Naam FROM Account INNER JOIN Profiel ON Profiel.AccountID = Account.AccountID GROUP BY Account.Naam, Profiel.AccountID HAVING COUNT(Profiel.AccountID) " + accountFilterBoxOption + " " + this.filterProfileAmountTextField.getText());
+            ResultSet resultSet = database.query("SELECT Account.Naam FROM Account INNER JOIN Profiel ON Profiel.AccountNaam = Account.Naam GROUP BY Account.Naam, Profiel.AccountNaam HAVING COUNT(Profiel.AccountNaam) " + accountFilterBoxOption + " " + this.filterProfileAmountTextField.getText());
 
             while (resultSet.next()) {
                 filteredAccountNames.add(resultSet.getString("Naam"));

@@ -36,7 +36,7 @@ public class AccountsPanelSelectActionListener implements ActionListener {
 
         try {
             Database db = Database.getInstance();
-            ResultSet rs = db.query("SELECT Profiel.Naam FROM Profiel WHERE Profiel.AccountID = ( SELECT Account.AccountID FROM Account WHERE Account.Naam = '"+this.selectAccountBox.getSelectedItem()+"');");
+            ResultSet rs = db.query("SELECT Profiel.Naam FROM Profiel WHERE Profiel.AccountNaam = (SELECT Account.Naam FROM Account WHERE Account.Naam = '"+this.selectAccountBox.getSelectedItem()+"');");
 
             while (rs.next()) {
                 accountList.add(rs.getString("Naam"));
