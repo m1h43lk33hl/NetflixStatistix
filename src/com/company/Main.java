@@ -9,8 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Class Main is the entrypoint class for the NetflixStatistix application
+ */
 public class Main {
 
+    /**
+     * Entry point for the NetflixStatistix application
+     *
+     * @param args
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         NetflixStatistixUI UI = new NetflixStatistixUI();
         UI.run();

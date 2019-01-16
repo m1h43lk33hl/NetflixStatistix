@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
+/**
+ * Class SeriesPanelFilterActionListener handles the filter implementation of class SeriesPanel
+ */
 public class SeriesPanelFilterActionListener implements ActionListener {
 
     private JTable seriesTable;
@@ -17,6 +20,14 @@ public class SeriesPanelFilterActionListener implements ActionListener {
     private JLabel selectedAccountName;
     JComboBox<String> accountFilterBox;
 
+    /**
+     * Class constructor for SeriesPanelFilterActionListener
+     *
+     * @param seriesTable
+     * @param barChart
+     * @param selectedAccountName
+     * @param accountFilterBox
+     */
     public SeriesPanelFilterActionListener(JTable seriesTable, JFreeChart barChart, JLabel selectedAccountName, JComboBox<String> accountFilterBox)
     {
         this.seriesTable = seriesTable;
@@ -25,6 +36,11 @@ public class SeriesPanelFilterActionListener implements ActionListener {
         this.accountFilterBox = accountFilterBox;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
@@ -68,6 +84,12 @@ public class SeriesPanelFilterActionListener implements ActionListener {
         }
     }
 
+    /**
+     * Returns a dataset for the JTable
+     *
+     * @param resultSet
+     * @return
+     */
     private CategoryDataset createDataset(ResultSet resultSet) {
 
         // Gebruiker of profiel
@@ -88,6 +110,4 @@ public class SeriesPanelFilterActionListener implements ActionListener {
 
         return dataset;
     }
-
-
 }

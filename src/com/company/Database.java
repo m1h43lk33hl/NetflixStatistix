@@ -2,7 +2,9 @@ package com.company;
 
 import java.sql.*;
 
-
+/**
+ * Class Database is a singleton class that handles the database implementation
+ */
 public class Database {
 
     // Singleton class object
@@ -16,7 +18,12 @@ public class Database {
     // Connection object
     private Connection connection;
 
-    // Constructor set to private because it is a singleton class
+    /**
+     * Class constructor for Database
+     *
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     private Database() throws SQLException, ClassNotFoundException {
 
         String connectionUrl = "jdbc:sqlserver://"+this.host+";user="+this.user+";databaseName="+this.databaseName+";integratedSecurity=true;";
@@ -24,7 +31,13 @@ public class Database {
         this.connection = DriverManager.getConnection(connectionUrl);
     }
 
-
+    /**
+     * Returns an instantiated database connection
+     *
+     * @return
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static synchronized Database getInstance() throws SQLException, ClassNotFoundException {
         if (database == null) {
             database = new Database();
@@ -33,6 +46,13 @@ public class Database {
         return database;
     }
 
+    /**
+     * Returns a resultset for a particular query
+     *
+     * @param query
+     * @return
+     * @throws SQLException
+     */
     public ResultSet query(String query) throws SQLException {
 
         Statement statement = this.connection.createStatement();

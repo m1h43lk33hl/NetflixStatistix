@@ -21,7 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-
+/**
+ * Class SeriesPanel handles components within the seriespanel
+ */
 public class SeriesPanel extends JPanel {
 
     // Labels for reference
@@ -29,6 +31,9 @@ public class SeriesPanel extends JPanel {
     private JLabel selectedProfileName = new JLabel();
 
 
+    /**
+     * Class constructor for SeriesPanel
+     */
     public SeriesPanel()
     {
         this.setBackground(Color.gray);
@@ -62,7 +67,6 @@ public class SeriesPanel extends JPanel {
         thirdComponentPanel.setBackground(Color.gray);
         forthComponentPanel.setBackground(Color.gray);
 
-
         // Set options
         innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -85,7 +89,7 @@ public class SeriesPanel extends JPanel {
         firstComponentPanel.add(tablePane);
 
         // Add components to third component panel
-        JLabel filterOptionsLabel = new JLabel("Filter options:");
+        JLabel filterOptionsLabel = new JLabel("Filter opties:");
         secondComponentPanel.add(filterOptionsLabel);
 
         // JCHART
@@ -93,7 +97,7 @@ public class SeriesPanel extends JPanel {
                 "Gemiddeld % bekeken van tijdsduur per aflevering",
                 "Category",
                 "Percentage",
-                createDataset(),
+                null,
                 PlotOrientation.VERTICAL,
                 true, true, false);
 
@@ -131,15 +135,10 @@ public class SeriesPanel extends JPanel {
         String[] ageIndicationFilterBoxOptions = {"Allemaal", "6", "9", "12", "16"};
         JComboBox<String> ageIndicationFilterBox = new JComboBox<>(ageIndicationFilterBoxOptions);
 
-
-
-
         JButton selectSerieButton = new JButton("Selecteer");
         selectSerieButton.addActionListener(new SeriesPanelSelectActionListener(seriesTable, barChart, this.selectedAccountName, accountFilterBox));
 
         forthComponentPanel.add(selectSerieButton);
-
-
         fifthComponentPanel.add(chartPanel);
 
         innerBoxPanel.add(firstComponentPanel);
@@ -148,7 +147,6 @@ public class SeriesPanel extends JPanel {
         // Create and add filler panel
         fillerPanel.add(Box.createRigidArea(new Dimension(0,15))); // Create space between buttons
         fillerPanel.setBackground(Color.gray);
-
 
         innerBoxPanel.add(fillerPanel);
         innerBoxPanel.add(fifthComponentPanel);
@@ -167,56 +165,6 @@ public class SeriesPanel extends JPanel {
             this.add(fillerPanel);
         }
     }
-
-    public JLabel getSelectedAccountName()
-    {
-        return this.selectedAccountName;
-    }
-
-
-    public JLabel getSelectedProfileName()
-    {
-        return this.selectedProfileName;
-    }
-
-    private CategoryDataset createDataset( ) {
-
-        // Gebruiker of profiel
-        final String gebruiker = "Gebruiker";
-
-        // Episode name
-        final String speed = "Speed";
-        final String millage = "Millage";
-        final String userrating = "User Rating";
-        final String aa = "asd";
-        final String bb = "c";
-        final String cc = "iasdo";
-        final String dd = "asdasdas";
-        final String ee = "asdas";
-        final String ff = "asdasdi";
-        final String gg = "asu0das";
-
-
-        final DefaultCategoryDataset dataset =
-                new DefaultCategoryDataset( );
-
-        dataset.addValue( 1.0 , gebruiker , speed );
-        dataset.addValue( 3.0 , gebruiker , userrating );
-        dataset.addValue( 5.0 , gebruiker , ff );
-        dataset.addValue( 5.0 , gebruiker , aa );
-
-        dataset.addValue( 5.0 , gebruiker , speed );
-        dataset.addValue( 6.0 , gebruiker , ee );
-        dataset.addValue( 10.0 , gebruiker , gg );
-        dataset.addValue( 4.0 , gebruiker , bb );
-
-        dataset.addValue( 2.0 , gebruiker , dd );
-        dataset.addValue( 3.0 , gebruiker , millage );
-        dataset.addValue( 6.0 , gebruiker , cc );
-
-        return dataset;
-    }
-
 
     /**
      * Builds default table model from query and returns it
@@ -255,5 +203,26 @@ public class SeriesPanel extends JPanel {
             return null;
         }
 
+    }
+
+    /**
+     * Returns the selected accountName label
+     *
+     * @return
+     */
+    public JLabel getSelectedAccountName()
+    {
+        return this.selectedAccountName;
+    }
+
+
+    /**
+     * Returns the selected profilesName label
+     *
+     * @return
+     */
+    public JLabel getSelectedProfileName()
+    {
+        return this.selectedProfileName;
     }
 }

@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class AccountsPanelFilterActionListener handles the filter implementation for class AccountsPanel
+ */
 public class AccountsPanelFilterActionListener implements ActionListener
 {
     private JTextField filterProfileAmountTextField;
@@ -14,6 +17,13 @@ public class AccountsPanelFilterActionListener implements ActionListener
     private JComboBox<String> selectProfileBox;
 
 
+    /**
+     * Class constructor for AccountsPanelFilterActionListener
+     *
+     * @param filterProfileAmountTextField
+     * @param accountFilterBox
+     * @param selectProfileBox
+     */
     public AccountsPanelFilterActionListener(JTextField filterProfileAmountTextField, JComboBox<String> accountFilterBox, JComboBox<String> selectProfileBox)
     {
         this.filterProfileAmountTextField = filterProfileAmountTextField;
@@ -21,6 +31,11 @@ public class AccountsPanelFilterActionListener implements ActionListener
         this.selectProfileBox = selectProfileBox;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
@@ -28,6 +43,11 @@ public class AccountsPanelFilterActionListener implements ActionListener
         this.selectProfileBox.setModel(model);
     }
 
+    /**
+     * Returns a list of filtered account names
+     *
+     * @return
+     */
     private List<String> getFilteredAccountNames()
     {
         List<String> filteredAccountNames = new ArrayList<>();

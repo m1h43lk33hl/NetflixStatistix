@@ -5,15 +5,28 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class SideMenuButtonActionListener implements the functionality for the sidemenu buttons within class SideMenu
+ */
 public class SideMenuButtonActionListener implements ActionListener
 {
     private SideMenu sideMenu;
 
+    /**
+     * Class constructor for SideMenu
+     *
+     * @param sideMenu
+     */
     public SideMenuButtonActionListener(SideMenu sideMenu)
     {
         this.sideMenu = sideMenu;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
@@ -46,8 +59,6 @@ public class SideMenuButtonActionListener implements ActionListener
                     case 4:
                         mainCardLayout.show(mainPanel, "filmsPanel");
                         break;
-
-
                 }
 
             }

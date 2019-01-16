@@ -5,11 +5,17 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class SideMenu handles the components for the sidemenu
+ */
 public class SideMenu extends JPanel {
 
     private int buttonWidth = 250;
     private int buttonHeight = 70;
 
+    /**
+     * Class constructor for SideMenu
+     */
     public SideMenu()
     {
         this.createComponents();

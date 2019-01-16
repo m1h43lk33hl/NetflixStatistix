@@ -5,15 +5,27 @@ import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class ProfilesPanel handles components within the profilespanel
+ */
 public class ProfilesPanel extends JPanel {
 
-    private JComboBox<String> selectProfileBox = new JComboBox<>(this.returnProfileNames());
+    String[] emptyProfileName = {"<Geen gegevens>"};
+    private JComboBox<String> selectProfileBox = new JComboBox<>(emptyProfileName);
     private JLabel selectedProfileName;
+    private JLabel selectedAccountName;
 
 
-    public ProfilesPanel(JLabel selectedProfileName)
+    /**
+     * Class constructor for ProfilesPanel
+     *
+     * @param selectedProfileName
+     * @param selectedAccountName
+     */
+    public ProfilesPanel(JLabel selectedProfileName, JLabel selectedAccountName)
     {
         this.selectedProfileName = selectedProfileName;
+        this.selectedAccountName = selectedAccountName;
         this.setBackground(Color.gray);
         this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -27,21 +39,33 @@ public class ProfilesPanel extends JPanel {
      */
     private void createComponents()
     {
-
         // Create panels
         JPanel innerFlowPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel innerFlowPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel innerBoxPanel = new JPanel();
-        innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
+        JPanel innerBoxPanel2 = new JPanel();
+        JPanel recommendedPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel firstComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+        innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
+        innerBoxPanel2.setLayout(new BoxLayout(innerBoxPanel2, BoxLayout.Y_AXIS));
+
         JPanel fillerPanel = new JPanel();
 
+        // Set borders
+        innerFlowPanel.setBorder(BorderFactory.createTitledBorder("Profiel"));
+        innerFlowPanel2.setBorder(BorderFactory.createTitledBorder("Profiel voorkeuren"));
 
         // Set colors
-        innerFlowPanel.setBorder(BorderFactory.createTitledBorder("Profiel"));
+        innerBoxPanel2.setBackground(Color.gray);
+        innerFlowPanel2.setBackground(Color.gray);
         innerFlowPanel.setBackground(Color.gray);
         innerBoxPanel.setBackground(Color.gray);
         firstComponentPanel.setBackground(Color.gray);
+        recommendedPanel.setBackground(Color.gray);
 
+        // Recommended panel labels
+        JLabel recommendedLabel = new JLabel("Selecteer eerst een profiel.");
 
         JLabel selectProfileLabel = new JLabel("Selecteer profiel: ");
 
@@ -49,8 +73,9 @@ public class ProfilesPanel extends JPanel {
         this.selectProfileBox.setPreferredSize(new Dimension(230, 25));
         this.selectProfileBox.setName("selectProfileBox");
 
+
         JButton selectProfileButton = new JButton("Selecteer");
-        selectProfileButton.addActionListener(new ProfilesPanelSelectActionListener(this.selectedProfileName, this.selectProfileBox));
+        selectProfileButton.addActionListener(new ProfilesPanelSelectActionListener(this.selectedProfileName, this.selectProfileBox, recommendedLabel, this.selectedAccountName));
 
         firstComponentPanel.add(selectProfileLabel);
         firstComponentPanel.add(this.selectProfileBox);
@@ -64,8 +89,18 @@ public class ProfilesPanel extends JPanel {
         fillerPanel.setBackground(Color.gray);
         innerBoxPanel.add(fillerPanel);
 
+        recommendedPanel.add(recommendedLabel);
+        innerBoxPanel2.add(recommendedPanel);
+
         innerFlowPanel.add(innerBoxPanel);
+        innerFlowPanel2.add(innerBoxPanel2);
+
+        // Keep FlowPanels aligned
+        innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        innerFlowPanel2.setAlignmentX(Component.LEFT_ALIGNMENT);
+
         this.add(innerFlowPanel);
+        this.add(innerFlowPanel2);
 
         // Create space for panel alignment
         for(int x = 0; x < 20; x++)
@@ -76,19 +111,14 @@ public class ProfilesPanel extends JPanel {
         }
     }
 
+    /**
+     * Returns the selectProfileBox for reference sake
+     *
+     * @return
+     */
     public JComboBox<String> getSelectProfileBox()
     {
         return this.selectProfileBox;
     }
 
-    /**
-     * Returns a string array of names of accounts by selected profile
-     *
-     * @return
-     */
-    private String[] returnProfileNames(){
-        String[] x = {"asjdashdaskjh", "asdjsaiodjasd", "ajdkadjsaljlsdj"};
-        return x;
-
-    }
 }

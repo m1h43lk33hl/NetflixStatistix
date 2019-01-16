@@ -5,8 +5,14 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class NetflixStatistixUI implements the mainframe functionality of the application
+ */
 public class NetflixStatistixUI implements Runnable {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void run() {
         JFrame frame = new JFrame();
@@ -29,6 +35,11 @@ public class NetflixStatistixUI implements Runnable {
         frame.setVisible(true);
     }
 
+    /**
+     * Adds elements to container
+     *
+     * @param container
+     */
     private void addElements(Container container)
     {
         container.add(new SouthBar(), BorderLayout.SOUTH);

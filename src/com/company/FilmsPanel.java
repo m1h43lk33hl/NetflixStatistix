@@ -4,13 +4,24 @@ import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 
+/**
+ * Class FilmsPanel handles components within the filmspanel.
+ */
 public class FilmsPanel extends JPanel {
 
+    // Labels for reference
+    private JLabel selectedAccountName = new JLabel();
+    private JLabel selectedProfileName = new JLabel();
+
+    /**
+     * Class constructor for FilmsPanel
+     */
     public FilmsPanel()
     {
         this.setBackground(Color.gray);
@@ -32,9 +43,11 @@ public class FilmsPanel extends JPanel {
         JPanel thirdComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel secondComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel forthComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel fifthComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel sixthComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel seventhComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         JPanel fillerPanel = new JPanel();
-
 
         // Set colors and titles
         innerFlowPanel.setBorder(BorderFactory.createTitledBorder("Films"));
@@ -44,6 +57,9 @@ public class FilmsPanel extends JPanel {
         secondComponentPanel.setBackground(Color.gray);
         thirdComponentPanel.setBackground(Color.gray);
         forthComponentPanel.setBackground(Color.gray);
+        fifthComponentPanel.setBackground(Color.gray);
+        sixthComponentPanel.setBackground(Color.gray);
+        seventhComponentPanel.setBackground(Color.gray);
 
 
         // Set options
@@ -53,6 +69,10 @@ public class FilmsPanel extends JPanel {
         //create table and fill with data then make selection mode single
         JTable filmsTable = new JTable(this.buildTableModel());
         filmsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        // Remove FilmID so it's invisible to the user but accessible for us
+        TableColumnModel tcm = filmsTable.getColumnModel();
+        tcm.removeColumn( tcm.getColumn(0) );
 
         JScrollPane tablePane = new JScrollPane(filmsTable);
 
@@ -65,19 +85,17 @@ public class FilmsPanel extends JPanel {
         firstComponentPanel.add(tablePane);
 
         // Add components to third component panel
-        JLabel filterOptionsLabel = new JLabel("Filter options:");
+        JLabel filterOptionsLabel = new JLabel("Filter opties:");
         secondComponentPanel.add(filterOptionsLabel);
 
         // Add components to second component panel
         JLabel filterAccountsLabel = new JLabel("Bekeken door:");
-        JButton filterAccountButton = new JButton("Filter");
 
+//        String[] accountFilterBoxOptions = {"Profiel", "Account"};
+//        JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
 
-        String[] accountFilterBoxOptions = {"Profiel", "Account"};
-        JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
-
-        thirdComponentPanel.add(filterAccountsLabel);
-        thirdComponentPanel.add(accountFilterBox);
+//        thirdComponentPanel.add(filterAccountsLabel);
+//        thirdComponentPanel.add(accountFilterBox);
 
         // add components to forth component panel
         JLabel timeSpanLabel = new JLabel("Tijdsduur:");
@@ -85,22 +103,60 @@ public class FilmsPanel extends JPanel {
         JComboBox<String> timeSpanFilterBox = new JComboBox<>(timeSpanFilterBoxOptions);
 
         JLabel ageIndicationLabel = new JLabel("Leeftijdsindicatie: ");
-        String[] ageIndicationFilterBoxOptions = {"Allemaal", "6", "9", "12", "16"};
+        String[] ageIndicationFilterBoxOptions = {"0", "6", "9", "12", "16"};
         JComboBox<String> ageIndicationFilterBox = new JComboBox<>(ageIndicationFilterBoxOptions);
+
+        String[] amountFilterBoxOptions = {"Gelijk aan", "Kleiner dan", "Groter dan"};
+        JComboBox<String> amountFilterBox = new JComboBox<>(amountFilterBoxOptions);
+
+        JButton filterAccountButton = new JButton("Filter");
+        filterAccountButton.addActionListener(new FilmsPanelFilterActionListener(ageIndicationFilterBox, amountFilterBox, timeSpanFilterBox, filmsTable, this.selectedAccountName));
 
         forthComponentPanel.add(timeSpanLabel);
         forthComponentPanel.add(timeSpanFilterBox);
         forthComponentPanel.add(ageIndicationLabel);
+        forthComponentPanel.add(amountFilterBox);
         forthComponentPanel.add(ageIndicationFilterBox);
         forthComponentPanel.add(filterAccountButton);
+
+        //Labels
+        this.selectedAccountName.setVisible(false);
+        this.selectedProfileName.setVisible(false);
+
+        forthComponentPanel.add(this.selectedAccountName);
+        forthComponentPanel.add(this.selectedProfileName);
+
+        //Fifth component panel
+        JLabel movieLabel = new JLabel("Film:");
+        JLabel movieSelectedLabel = new JLabel("<Geen gegevens>");
+        movieSelectedLabel.setForeground(Color.white);
+
+        JLabel watchByLabel = new JLabel("Totaal bekeken door:");
+        JLabel watchByAmountLabel = new JLabel("<Geen gegevens>");
+        watchByAmountLabel.setForeground(Color.white);
+
+        seventhComponentPanel.add(watchByLabel);
+        seventhComponentPanel.add(watchByAmountLabel);
+
+        fifthComponentPanel.add(movieLabel);
+        fifthComponentPanel.add(movieSelectedLabel);
+
+        JButton selectMovieButton = new JButton("Select");
+        selectMovieButton.addActionListener(new FilmsPanelSelectActionListener(filmsTable, movieSelectedLabel, watchByAmountLabel));
+
+        sixthComponentPanel.add(selectMovieButton);
+
 
         innerBoxPanel.add(firstComponentPanel);
 
         // Create and add filler panel
         fillerPanel.add(Box.createRigidArea(new Dimension(0,30))); // Create space between buttons
         fillerPanel.setBackground(Color.gray);
-        innerBoxPanel.add(fillerPanel);
 
+        innerBoxPanel.add(sixthComponentPanel);
+        innerBoxPanel.add(fifthComponentPanel);
+        innerBoxPanel.add(seventhComponentPanel);
+        innerBoxPanel.add(fillerPanel);
         innerBoxPanel.add(secondComponentPanel);
         innerBoxPanel.add(thirdComponentPanel);
         innerBoxPanel.add(forthComponentPanel);
@@ -118,6 +174,16 @@ public class FilmsPanel extends JPanel {
         }
     }
 
+    public JLabel getSelectedAccountName()
+    {
+        return this.selectedAccountName;
+    }
+    public JLabel getSelectedProfileName()
+    {
+        return this.selectedProfileName;
+    }
+
+
     /**
      * Builds default table model from query and returns it
      *
@@ -127,18 +193,18 @@ public class FilmsPanel extends JPanel {
 
         try {
             Database database = Database.getInstance();
-            ResultSet resultSet = database.query("SELECT Titel,Genre,Taal,Leeftijdsindicatie FROM Film");
+            ResultSet resultSet = database.query("SELECT * FROM Film");
 
             ResultSetMetaData metaData = resultSet.getMetaData();
 
-            // names of columns
+            // Names of columns
             Vector<String> columnNames = new Vector<String>();
             int columnCount = metaData.getColumnCount();
             for (int column = 1; column <= columnCount; column++) {
                 columnNames.add(metaData.getColumnName(column));
             }
 
-            // data of the table
+            // Data of the table
             Vector<Vector<Object>> data = new Vector<Vector<Object>>();
             while (resultSet.next()) {
                 Vector<Object> vector = new Vector<Object>();

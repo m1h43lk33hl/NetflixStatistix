@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
+/**
+ * Class SeriesPanelSelectActionListener implements the selection functionality for class SeriesPanel
+ */
 public class SeriesPanelSelectActionListener implements ActionListener {
 
     private JTable seriesTable;
@@ -17,7 +20,14 @@ public class SeriesPanelSelectActionListener implements ActionListener {
     private JLabel selectedAccountName;
     private JComboBox<String> accountFilterBox;
 
-
+    /**
+     * Class constructor for SeriesPanelSelectActionListener
+     *
+     * @param seriesTable
+     * @param barChart
+     * @param selectedAccountName
+     * @param accountFilterBox
+     */
     public SeriesPanelSelectActionListener(JTable seriesTable, JFreeChart barChart, JLabel selectedAccountName, JComboBox<String> accountFilterBox)
     {
         this.seriesTable = seriesTable;
@@ -26,6 +36,11 @@ public class SeriesPanelSelectActionListener implements ActionListener {
         this.accountFilterBox = accountFilterBox;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
@@ -69,6 +84,12 @@ public class SeriesPanelSelectActionListener implements ActionListener {
         }
     }
 
+    /**
+     * Returns a dataset for the JTable
+     *
+     * @param resultSet
+     * @return
+     */
     private CategoryDataset createDataset(ResultSet resultSet) {
 
         // Gebruiker of profiel
