@@ -8,10 +8,12 @@ import java.awt.*;
 public class ProfilesPanel extends JPanel {
 
     private JComboBox<String> selectProfileBox = new JComboBox<>(this.returnProfileNames());
+    private JLabel selectedProfileName;
 
 
-    public ProfilesPanel()
+    public ProfilesPanel(JLabel selectedProfileName)
     {
+        this.selectedProfileName = selectedProfileName;
         this.setBackground(Color.gray);
         this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -48,6 +50,7 @@ public class ProfilesPanel extends JPanel {
         this.selectProfileBox.setName("selectProfileBox");
 
         JButton selectProfileButton = new JButton("Selecteer");
+        selectProfileButton.addActionListener(new ProfilesPanelSelectActionListener(this.selectedProfileName, this.selectProfileBox));
 
         firstComponentPanel.add(selectProfileLabel);
         firstComponentPanel.add(this.selectProfileBox);

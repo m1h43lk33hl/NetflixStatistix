@@ -12,16 +12,19 @@ public class AccountsPanelSelectActionListener implements ActionListener {
 
     private JComboBox<String> selectProfileBox;
     private JComboBox<String> selectAccountBox;
+    private JLabel selectedAccountName;
 
-    public AccountsPanelSelectActionListener(JComboBox<String> selectProfileBox, JComboBox<String> selectAccountBox)
+    public AccountsPanelSelectActionListener(JComboBox<String> selectProfileBox, JComboBox<String> selectAccountBox, JLabel selectedAccountName)
     {
         this.selectProfileBox = selectProfileBox;
         this.selectAccountBox = selectAccountBox;
+        this.selectedAccountName = selectedAccountName;
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
+        this.selectedAccountName.setText(this.selectAccountBox.getSelectedItem().toString());
         DefaultComboBoxModel model = new DefaultComboBoxModel(this.returnProfileNames().toArray());
         this.selectProfileBox.setModel(model);
     }

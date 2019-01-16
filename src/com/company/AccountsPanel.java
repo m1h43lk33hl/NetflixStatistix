@@ -10,11 +10,15 @@ import java.util.List;
 public class AccountsPanel extends JPanel {
 
     private JComboBox<String> selectProfileBox;
+    private JLabel selectedAccountName;
 
-    public AccountsPanel(JComboBox<String> selectProfileBox)
+    public AccountsPanel(JComboBox<String> selectProfileBox, JLabel selectedAccountName)
     {
         // Add for reference to profilePanel for actionListener
         this.selectProfileBox = selectProfileBox;
+
+        // Add for reference to series table
+        this.selectedAccountName = selectedAccountName;
 
         this.setBackground(Color.gray);
         this.createComponents();
@@ -53,7 +57,7 @@ public class AccountsPanel extends JPanel {
         selectAccountBox.setPreferredSize(new Dimension(230, 25));
 
         JButton selectProfileButton = new JButton("Selecteer");
-        selectProfileButton.addActionListener(new AccountsPanelSelectActionListener(this.selectProfileBox, selectAccountBox));
+        selectProfileButton.addActionListener(new AccountsPanelSelectActionListener(this.selectProfileBox, selectAccountBox, this.selectedAccountName));
 
         firstComponentPanel.add(selectProfileLabel);
         firstComponentPanel.add(selectAccountBox);

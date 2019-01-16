@@ -3,7 +3,11 @@ package com.company;
 import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.Vector;
 
 public class FilmsPanel extends JPanel {
 
@@ -46,11 +50,9 @@ public class FilmsPanel extends JPanel {
         innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        //create table and fill with data
-        Object[] filmData = this.returnFilmData();
-        String[] columns = (String[])filmData[1];
-        Object[][] data = (Object[][])filmData[0];
-        JTable filmsTable = new JTable(data, columns);
+        //create table and fill with data then make selection mode single
+        JTable filmsTable = new JTable(this.buildTableModel());
+        filmsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         JScrollPane tablePane = new JScrollPane(filmsTable);
 
@@ -117,38 +119,41 @@ public class FilmsPanel extends JPanel {
     }
 
     /**
-     * Returns a string array of film data by selected film options
+     * Builds default table model from query and returns it
      *
      * @return
      */
-    private Object[] returnFilmData(){
+    private DefaultTableModel buildTableModel(){
 
-        //headers for the table
-        String[] columns = new String[] {
-                "Titel", "Genre", "Taal", "Leeftijdsincdicatie"
-        };
+        try {
+            Database database = Database.getInstance();
+            ResultSet resultSet = database.query("SELECT Titel,Genre,Taal,Leeftijdsindicatie FROM Film");
 
-        //actual data for the table in a 2d array
-        Object[][] data = new Object[][] {
-                {1, "John", 40.0, false },
-                {2, "Rambo", 70.0, false },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-                {3, "Zorro", 60.0, true },
-        };
+            ResultSetMetaData metaData = resultSet.getMetaData();
 
-        Object[] tableData = {data, columns};
+            // names of columns
+            Vector<String> columnNames = new Vector<String>();
+            int columnCount = metaData.getColumnCount();
+            for (int column = 1; column <= columnCount; column++) {
+                columnNames.add(metaData.getColumnName(column));
+            }
 
-        return tableData;
+            // data of the table
+            Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+            while (resultSet.next()) {
+                Vector<Object> vector = new Vector<Object>();
+                for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+                    vector.add(resultSet.getObject(columnIndex));
+                }
+                data.add(vector);
+            }
+
+            return new DefaultTableModel(data, columnNames);
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
 
     }
 }

@@ -11,10 +11,23 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 
 public class SeriesPanel extends JPanel {
+
+    // Labels for reference
+    private JLabel selectedAccountName = new JLabel();
+    private JLabel selectedProfileName = new JLabel();
+
 
     public SeriesPanel()
     {
@@ -29,7 +42,6 @@ public class SeriesPanel extends JPanel {
      */
     private void createComponents()
     {
-
         // Create panels
         JPanel innerFlowPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel innerBoxPanel = new JPanel();
@@ -40,7 +52,6 @@ public class SeriesPanel extends JPanel {
         JPanel fifthComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         JPanel fillerPanel = new JPanel();
-
 
         // Set colors and titles
         innerFlowPanel.setBorder(BorderFactory.createTitledBorder("Series"));
@@ -56,16 +67,18 @@ public class SeriesPanel extends JPanel {
         innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        //create table and fill with data
-        Object[] filmData = this.returnFilmData();
-        String[] columns = (String[])filmData[1];
-        Object[][] data = (Object[][])filmData[0];
-        JTable filmsTable = new JTable(data, columns);
 
-        JScrollPane tablePane = new JScrollPane(filmsTable);
+        // Create table
+        JTable seriesTable = new JTable(this.buildTableModel());
+        seriesTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        // Remove serieID so it's invisible to the user but accessible for us
+        TableColumnModel tcm = seriesTable.getColumnModel();
+        tcm.removeColumn( tcm.getColumn(0) );
+
+        JScrollPane tablePane = new JScrollPane(seriesTable);
         tablePane.setPreferredSize(new Dimension(500, 130));
         tablePane.setMaximumSize(new Dimension(500, 13-0));
-
 
 
         // Add components to first component panel
@@ -75,16 +88,39 @@ public class SeriesPanel extends JPanel {
         JLabel filterOptionsLabel = new JLabel("Filter options:");
         secondComponentPanel.add(filterOptionsLabel);
 
-        // Add components to second component panel
-        JLabel filterAccountsLabel = new JLabel("Bekeken door:");
-        JButton filterAccountButton = new JButton("Filter");
+        // JCHART
+        JFreeChart barChart = ChartFactory.createBarChart(
+                "Gemiddeld % bekeken van tijdsduur per aflevering",
+                "Category",
+                "Percentage",
+                createDataset(),
+                PlotOrientation.VERTICAL,
+                true, true, false);
+
+        barChart.getCategoryPlot().getRangeAxis().setLowerBound(0.0);
+        barChart.getCategoryPlot().getRangeAxis().setUpperBound(100.0);
+
+        ChartPanel chartPanel = new ChartPanel( barChart );
+        chartPanel.setPreferredSize(new Dimension(900, 190));
+        chartPanel.setMinimumSize(new Dimension(900, 190));
 
         String[] accountFilterBoxOptions = {"Account", "Iedereen"};
         JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
 
-        thirdComponentPanel.add(filterAccountsLabel);
+
+        // Add components to second component panel
+        JLabel filterAccountsLabel = new JLabel("Bekeken door:");
+        JButton filterAccountButton = new JButton("Filter");
+        filterAccountButton.addActionListener(new SeriesPanelFilterActionListener(seriesTable, barChart, this.selectedAccountName, accountFilterBox));
+
+        // Set Labels invisible
+        this.selectedAccountName.setVisible(false);
+        this.selectedProfileName.setVisible(false);
+
         thirdComponentPanel.add(accountFilterBox);
         thirdComponentPanel.add(filterAccountButton);
+        thirdComponentPanel.add(this.selectedAccountName);
+        thirdComponentPanel.add(this.selectedProfileName);
 
         // add components to forth component panel
         JLabel timeSpanLabel = new JLabel("Tijdsduur:");
@@ -95,23 +131,14 @@ public class SeriesPanel extends JPanel {
         String[] ageIndicationFilterBoxOptions = {"Allemaal", "6", "9", "12", "16"};
         JComboBox<String> ageIndicationFilterBox = new JComboBox<>(ageIndicationFilterBoxOptions);
 
+
+
+
         JButton selectSerieButton = new JButton("Selecteer");
+        selectSerieButton.addActionListener(new SeriesPanelSelectActionListener(seriesTable, barChart, this.selectedAccountName, accountFilterBox));
 
         forthComponentPanel.add(selectSerieButton);
 
-
-        // JCHART
-        JFreeChart barChart = ChartFactory.createBarChart(
-                "Gemiddeld % bekeken van tijdsduur per aflevering",
-                "Category",
-                "Score",
-                createDataset(),
-                PlotOrientation.VERTICAL,
-                true, true, false);
-
-        ChartPanel chartPanel = new ChartPanel( barChart );
-        chartPanel.setPreferredSize(new Dimension(900, 190));
-        chartPanel.setMinimumSize(new Dimension(900, 190));
 
         fifthComponentPanel.add(chartPanel);
 
@@ -135,50 +162,21 @@ public class SeriesPanel extends JPanel {
         // Create space for panel alignment
         for(int x = 0; x < 3; x++)
         {
-
             fillerPanel = new JPanel();
             fillerPanel.setBackground(Color.gray);
             this.add(fillerPanel);
         }
     }
 
-    /**
-     * Returns a string array of film data by selected film options
-     *
-     * @return
-     */
-    private Object[] returnFilmData(){
+    public JLabel getSelectedAccountName()
+    {
+        return this.selectedAccountName;
+    }
 
-        //headers for the table
-        String[] columns = new String[] {
-                "Titel", "Genre", "Taal", "Leeftijdsincdicatie", "Aantal afleveringen"
-        };
 
-        //actual data for the table in a 2d array
-        Object[][] data = new Object[][] {
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-                {1, "John", 40.0, false, "3" },
-
-        };
-
-        Object[] tableData = {data, columns};
-
-        return tableData;
-
+    public JLabel getSelectedProfileName()
+    {
+        return this.selectedProfileName;
     }
 
     private CategoryDataset createDataset( ) {
@@ -220,4 +218,42 @@ public class SeriesPanel extends JPanel {
     }
 
 
+    /**
+     * Builds default table model from query and returns it
+     *
+     * @return
+     */
+    private DefaultTableModel buildTableModel(){
+
+        try {
+            Database database = Database.getInstance();
+            ResultSet resultSet = database.query("SELECT * FROM Serie");
+
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            // names of columns
+            Vector<String> columnNames = new Vector<String>();
+            int columnCount = metaData.getColumnCount();
+            for (int column = 1; column <= columnCount; column++) {
+                columnNames.add(metaData.getColumnName(column));
+            }
+
+            // data of the table
+            Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+            while (resultSet.next()) {
+                Vector<Object> vector = new Vector<Object>();
+                for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+                    vector.add(resultSet.getObject(columnIndex));
+                }
+                data.add(vector);
+            }
+
+            return new DefaultTableModel(data, columnNames);
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+
+    }
 }
