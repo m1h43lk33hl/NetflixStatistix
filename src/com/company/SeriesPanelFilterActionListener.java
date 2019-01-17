@@ -55,7 +55,8 @@ public class SeriesPanelFilterActionListener implements ActionListener {
                     "\tINNER JOIN Profiel ON Profiel.ProfielID = Programmalog.ProfielID \n" +
                     "\tINNER JOIN Account ON Account.Naam = Profiel.AccountNaam \n" +
                     "\tINNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID \n" +
-                    "\tINNER JOIN Serie ON Serie.SerieID = Aflevering.SerieID \n" +
+                    "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
+                    "\tINNER JOIN Serie ON Serie.SerieID = Seizoen.SeizoenID\n" +
                     "WHERE Account.Naam = '"+this.selectedAccountName.getText()+"' AND Serie.SerieID = "+seriesID+" GROUP BY Aflevering.AfleveringID, Aflevering.Titel;";
         }
         else
@@ -64,7 +65,8 @@ public class SeriesPanelFilterActionListener implements ActionListener {
                     "\tINNER JOIN Profiel ON Profiel.ProfielID = Programmalog.ProfielID \n" +
                     "\tINNER JOIN Account ON Account.Naam = Profiel.AccountNaam \n" +
                     "\tINNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID \n" +
-                    "\tINNER JOIN Serie ON Serie.SerieID = Aflevering.SerieID \n" +
+                    "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
+                    "\tINNER JOIN Serie ON Serie.SerieID = Seizoen.SeizoenID\n" +
                     "WHERE Serie.SerieID = "+seriesID+" GROUP BY Aflevering.AfleveringID, Aflevering.Titel;";
         }
 

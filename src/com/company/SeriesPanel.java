@@ -30,7 +30,6 @@ public class SeriesPanel extends JPanel {
     private JLabel selectedAccountName = new JLabel();
     private JLabel selectedProfileName = new JLabel();
 
-
     /**
      * Class constructor for SeriesPanel
      */

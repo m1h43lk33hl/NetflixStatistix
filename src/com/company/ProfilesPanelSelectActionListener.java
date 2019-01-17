@@ -55,7 +55,8 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
                 "\t(SELECT TOP 1 Serie.Genre \n" +
                 "\tFROM Programmalog \n" +
                 "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID \n" +
-                "\tINNER JOIN Serie ON Aflevering.SerieID=Serie.SerieID \n" +
+                "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
+                "\tINNER JOIN Serie ON Seizoen.SerieID = Serie.SerieID \n" +
                 "\tWHERE Programmalog.ProfielID IN \n" +
                 "\t\t(SELECT Profiel.ProfielID \n" +
                 "\t\tFROM Profiel INNER JOIN Account \n" +
@@ -64,7 +65,8 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
                 "\t\tAND Programmalog.PercentageBekeken > 80) \n" +
                 "\tAND Serie.Titel != (SELECT Serie.Titel FROM Programmalog \n" +
                 "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID \n" +
-                "\tINNER JOIN Serie ON Aflevering.SerieID=Serie.SerieID \n" +
+                "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
+                "\tINNER JOIN Serie ON Seizoen.SerieID = Serie.SerieID  \n" +
                 "\tWHERE Programmalog.ProfielID IN \n" +
                 "\t\t(SELECT Profiel.ProfielID \n" +
                 "\t\tFROM Profiel \n" +
@@ -74,8 +76,9 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
 
         String SQL2 = "SELECT Serie.Titel \n" +
                 "\tFROM Programmalog \n" +
-                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID \n" +
-                "\tINNER JOIN Serie ON Aflevering.SerieID=Serie.SerieID \n" +
+                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID\n" +
+                "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
+                "\tINNER JOIN Serie ON Seizoen.SerieID = Serie.SerieID \n" +
                 "\tWHERE Programmalog.ProfielID IN \n" +
                 "\t\t(SELECT Profiel.ProfielID \n" +
                 "\t\tFROM Profiel INNER JOIN Account \n" +
@@ -83,7 +86,6 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
                 "\t\tWHERE Account.Naam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"') \n" +
                 "\t\tAND Programmalog.PercentageBekeken > 80";
 
-        System.out.println(SQL2);
         try {
 
             // First query
@@ -101,8 +103,6 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
                     //statement(s)
                 } while(resultSet1.next());
             }
-
-
 
             // Second query
             ResultSet resultSet2 = Database.getInstance().query(SQL2);
