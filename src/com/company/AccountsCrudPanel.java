@@ -9,11 +9,14 @@ import java.util.List;
 /**
  * Class AccountsPanel handles components within the accountspanel
  */
-public class AccountsPanel extends JPanel {
+public class AccountsCrudPanel extends JPanel {
 
     private JComboBox<String> selectProfileBox;
     private JLabel selectedAccountNameSeries;
     private JLabel selectedAccountNameFilm;
+
+    private int crudMode = 0; // 0 = Create, 1=Update (edit)
+    private Object[] accountLabelArray;
 
     // Internal frame
     private InternalFrame internalFrame;
@@ -21,20 +24,25 @@ public class AccountsPanel extends JPanel {
     /**
      * Class constructor for AccountsPanel
      *
-     * @param selectProfileBox
-     * @param selectedAccountNameSeries
-     * @param selectedAccountNameFilm
      */
-    public AccountsPanel(JComboBox<String> selectProfileBox, JLabel selectedAccountNameSeries, JLabel selectedAccountNameFilm, InternalFrame internalFrame)
+    public AccountsCrudPanel(int crudMode)
     {
-        this.internalFrame = internalFrame;
+        // Set crudMode
+        this.crudMode = crudMode;
 
-        // Add for reference to profilePanel for actionListener
-        this.selectProfileBox = selectProfileBox;
+        this.setBackground(Color.gray);
+        this.createComponents();
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setAlignmentX(Component.LEFT_ALIGNMENT);
+        this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        this.setName("accountsPanel");
+    }
 
-        // Add for reference to series table
-        this.selectedAccountNameSeries = selectedAccountNameSeries;
-        this.selectedAccountNameFilm = selectedAccountNameFilm;
+    public AccountsCrudPanel(int crudMode, Object[] accountLabelArray)
+    {
+        // Set crudMode
+        this.crudMode = crudMode;
+        this.accountLabelArray = accountLabelArray;
 
         this.setBackground(Color.gray);
         this.createComponents();
@@ -55,27 +63,20 @@ public class AccountsPanel extends JPanel {
         JPanel innerBoxPanel = new JPanel();
         innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
 
-        JPanel firstComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JPanel secondComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JPanel thirdComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-
         JPanel fillerPanel = new JPanel();
 
-        //
+        // Account panels
         JPanel accountNamePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel accountStreetNamePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel accountHouseNumberPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel accountResidencePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
+        JPanel innerButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         // Second panel
         JPanel someComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel innerFlowPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel innerBoxPanel2 = new JPanel();
         innerBoxPanel2.setLayout(new BoxLayout(innerBoxPanel2, BoxLayout.Y_AXIS));
-        JPanel accountButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
 
 
         // Set borders
@@ -87,59 +88,64 @@ public class AccountsPanel extends JPanel {
         innerFlowPanel2.setBackground(Color.gray);
         innerFlowPanel.setBackground(Color.gray);
         innerBoxPanel.setBackground(Color.gray);
-        firstComponentPanel.setBackground(Color.gray);
-        secondComponentPanel.setBackground(Color.gray);
         accountNamePanel.setBackground(Color.gray);
         accountStreetNamePanel.setBackground(Color.gray);
         accountHouseNumberPanel.setBackground(Color.gray);
         accountResidencePanel.setBackground(Color.gray);
-        thirdComponentPanel.setBackground(Color.gray);
-        accountButtonsPanel.setBackground(Color.gray);
+        innerButtonPanel.setBackground(Color.gray);
+
 
         // Second ___
         JLabel accountNameLabel = new JLabel("Account Naam:");
-        JLabel accountNameSelectLabel = new JLabel();
-        accountNameSelectLabel.setForeground(Color.white);
+        JTextField accountNameTextField = new JTextField("");
+        accountNameTextField.setPreferredSize(new Dimension(100, 25));
 
         JLabel accountStreetNameLabel = new JLabel("Straatnaam:");
-        JLabel accountStreetNameSelectLabel = new JLabel("<Geen gegevens>");
-        accountStreetNameSelectLabel.setForeground(Color.white);
+        JTextField accountStreetNameTextField = new JTextField("");
+        accountStreetNameTextField.setPreferredSize(new Dimension(100, 25));
 
         JLabel accountHouseNumberLabel = new JLabel("Huisnummer:");
-        JLabel accountHouseNumberSelectLabel = new JLabel("<Geen gegevens>");
-        accountHouseNumberSelectLabel.setForeground(Color.white);
+        JTextField accountHouseNumberTextField = new JTextField("");
+        accountHouseNumberTextField.setPreferredSize(new Dimension(100, 25));
 
         JLabel accountHouseNumberExtraLabel = new JLabel("Toevoeging:");
-        JLabel accountHouseNumberExtraSelectLabel = new JLabel("<Geen gegevens>");
-        accountHouseNumberExtraSelectLabel.setForeground(Color.white);
+        JTextField accountHouseNumberExtraTextField = new JTextField("");
+        accountHouseNumberExtraTextField.setPreferredSize(new Dimension(100, 25));
 
         JLabel accountResidenceLabel = new JLabel("Woonplaats:");
-        JLabel accountResidenceSelectLabel = new JLabel("<Geen gegevens>");
-        accountResidenceSelectLabel.setForeground(Color.white);
+        JTextField accountResidenceTextField = new JTextField("");
+        accountResidenceTextField.setPreferredSize(new Dimension(100, 25));
 
-        Object[] accountLabelArray = new Object[5];
-        accountLabelArray[0] = accountNameSelectLabel;
-        accountLabelArray[1] = accountStreetNameSelectLabel;
-        accountLabelArray[2] = accountHouseNumberSelectLabel;
-        accountLabelArray[3] = accountHouseNumberExtraSelectLabel;
-        accountLabelArray[4] = accountResidenceSelectLabel;
+        if(this.crudMode == 1)
+        {
+            accountNameTextField.setText( ((JLabel)this.accountLabelArray[0]).getText() );
+            accountStreetNameTextField.setText( ((JLabel)this.accountLabelArray[1]).getText() );
+            accountHouseNumberTextField.setText( ((JLabel)this.accountLabelArray[2]).getText() );
+            accountHouseNumberExtraTextField.setText( ((JLabel)this.accountLabelArray[3]).getText() );
+            accountResidenceTextField.setText( ((JLabel)this.accountLabelArray[4]).getText() );
+        }
 
-        JLabel selectProfileLabel = new JLabel("Selecteer account: ");
 
-        JComboBox<String> selectAccountBox = new JComboBox<>(this.returnAccountNames().toArray(new String[0]));
-        selectAccountBox.setMinimumSize(new Dimension(230, 25));
-        selectAccountBox.setPreferredSize(new Dimension(230, 25));
+//        List<String> accountFieldArray = new ArrayList<>();
+//
+//        accountFieldArray.add(accountNameTextField.getText());
+//        accountFieldArray.add(accountStreetNameTextField.getText());
+//        accountFieldArray.add(accountHouseNumberTextField.getText());
+//        accountFieldArray.add(accountHouseNumberTextField.getText());
+//        accountFieldArray.add(accountResidenceTextField.getText());
 
-        JButton selectAccountButton = new JButton("Selecteer");
-        selectAccountButton.addActionListener(new AccountsPanelSelectActionListener(this.selectProfileBox, selectAccountBox, this.selectedAccountNameSeries, this.selectedAccountNameFilm, accountLabelArray));
+
+        Object[] accountFieldArray = new Object[5];
+        accountFieldArray[0] = accountNameTextField;
+        accountFieldArray[1] = accountStreetNameTextField;
+        accountFieldArray[2] = accountHouseNumberTextField;
+        accountFieldArray[3] = accountHouseNumberExtraTextField;
+        accountFieldArray[4] = accountResidenceTextField;
+
 
         JButton createProfileButton = new JButton("Nieuw");
-        createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0));
 
-        firstComponentPanel.add(selectProfileLabel);
-        firstComponentPanel.add(selectAccountBox);
-        firstComponentPanel.add(selectAccountButton);
-        firstComponentPanel.add(createProfileButton);
+        createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0));
 
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
@@ -151,59 +157,44 @@ public class AccountsPanel extends JPanel {
         String[] accountFilterBoxOptions = {"Gelijk aan", "Kleiner dan", "Groter dan"};
         JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
 
-        filterAccountButton.addActionListener(new AccountsPanelFilterActionListener(filterProfileAmountTextField, accountFilterBox, selectAccountBox));
+//        filterAccountButton.addActionListener(new AccountsPanelFilterActionListener(filterProfileAmountTextField, accountFilterBox, selectAccountBox));
 
         JLabel filterOptionsLabel = new JLabel("Filter opties:");
-        thirdComponentPanel.add(filterOptionsLabel);
 
-        secondComponentPanel.add(filterAccountsLabel);
-        secondComponentPanel.add(accountFilterBox);
-        secondComponentPanel.add(filterAccountsLabelBasedOn);
-        secondComponentPanel.add(filterProfileAmountTextField);
-        secondComponentPanel.add(filterAccountButton);
-
-        innerBoxPanel.add(firstComponentPanel);
 
         // Create and add filler panel
         fillerPanel.add(Box.createRigidArea(new Dimension(0,15))); // Create space between buttons
         fillerPanel.setBackground(Color.gray);
         innerBoxPanel.add(fillerPanel);
 
-        innerBoxPanel.add(thirdComponentPanel);
-        innerBoxPanel.add(secondComponentPanel);
 
         accountNamePanel.add(accountNameLabel);
-        accountNamePanel.add(accountNameSelectLabel);
+        accountNamePanel.add(accountNameTextField);
 
         accountStreetNamePanel.add(accountStreetNameLabel);
-        accountStreetNamePanel.add(accountStreetNameSelectLabel);
+        accountStreetNamePanel.add(accountStreetNameTextField);
 
         accountHouseNumberPanel.add(accountHouseNumberLabel);
-        accountHouseNumberPanel.add(accountHouseNumberSelectLabel);
+        accountHouseNumberPanel.add(accountHouseNumberTextField);
         accountHouseNumberPanel.add(Box.createRigidArea(new Dimension(20,0)));
 
         accountHouseNumberPanel.add(accountHouseNumberExtraLabel);
-        accountHouseNumberPanel.add(accountHouseNumberExtraSelectLabel);
+        accountHouseNumberPanel.add(accountHouseNumberExtraTextField);
 
         accountResidencePanel.add(accountResidenceLabel);
-        accountResidencePanel.add(accountResidenceSelectLabel);
-
-        JButton editAccountButton = new JButton("Bewerk");
-        System.out.println("WWRWK");
-        System.out.println(((JLabel)accountLabelArray[0]).getText());
-        editAccountButton.addActionListener(new AccountsPanelCrudActionListener(1, accountLabelArray));
-
-        JButton deleteAccountButton = new JButton("Verwijder");
-
-        accountButtonsPanel.add(editAccountButton);
-        accountButtonsPanel.add(deleteAccountButton);
+        accountResidencePanel.add(accountResidenceTextField);
 
         innerBoxPanel2.add(Box.createRigidArea(new Dimension(0,15)));
         innerBoxPanel2.add(accountNamePanel);
         innerBoxPanel2.add(accountStreetNamePanel);
         innerBoxPanel2.add(accountHouseNumberPanel);
         innerBoxPanel2.add(accountResidencePanel);
-        innerBoxPanel2.add(accountButtonsPanel);
+
+        JButton crudButton = new JButton("Voeg toe");
+        crudButton.addActionListener(new AccountsCrudPanelActionListener(accountFieldArray, this.crudMode));
+
+        innerButtonPanel.add(crudButton);
+        innerBoxPanel2.add(innerButtonPanel);
 
         innerFlowPanel.add(innerBoxPanel);
         innerFlowPanel2.add(innerBoxPanel2);
@@ -212,7 +203,7 @@ public class AccountsPanel extends JPanel {
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
         innerFlowPanel2.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        this.add(innerFlowPanel);
+//        this.add(innerFlowPanel);
         this.add(innerFlowPanel2);
 
         // Create space for panel alignment

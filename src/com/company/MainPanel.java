@@ -21,6 +21,9 @@ public class MainPanel extends JPanel {
         this.setName("mainPanel");
         this.setBackground(Color.gray);
 
+        // Create internal frame
+        InternalFrame internalFrame = new InternalFrame(new AccountsCrudPanel(0));
+
         // Create panels for cardlayout
         FilmsPanel filmsPanel = new FilmsPanel();
         filmsPanel.setName("filmsPanel");
@@ -32,7 +35,7 @@ public class MainPanel extends JPanel {
         JComboBox<String> selectProfileBox = profilesPanel.getSelectProfileBox();
         profilesPanel.setName("profilesPanel");
 
-        AccountsPanel accountsPanel = new AccountsPanel(selectProfileBox, seriesPanel.getSelectedAccountName(), filmsPanel.getSelectedAccountName());
+        AccountsPanel accountsPanel = new AccountsPanel(selectProfileBox, seriesPanel.getSelectedAccountName(), filmsPanel.getSelectedAccountName(), internalFrame);
         accountsPanel.setName("accountsPanel");
 
         // Adds panels to cardlayout panel
