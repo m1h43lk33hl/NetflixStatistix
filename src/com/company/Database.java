@@ -63,4 +63,20 @@ public class Database {
         return resultSet;
     }
 
+    /**
+     * Executes a DDL operation so it returns nothing
+     *
+     * @param query
+     * @return
+     * @throws SQLException
+     */
+    public void queryDDL(String query) throws SQLException {
+
+        Statement statement = this.connection.createStatement();
+
+        // Execute query
+        statement.executeUpdate(query);
+    }
+
+
 }

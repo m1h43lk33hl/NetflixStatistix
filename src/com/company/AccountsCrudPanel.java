@@ -17,6 +17,7 @@ public class AccountsCrudPanel extends JPanel {
 
     private int crudMode = 0; // 0 = Create, 1=Update (edit)
     private Object[] accountLabelArray;
+    private JComboBox<String> selectAccountBox;
 
     // Internal frame
     private InternalFrame internalFrame;
@@ -35,21 +36,22 @@ public class AccountsCrudPanel extends JPanel {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        this.setName("accountsPanel");
+        this.setName("Nieuw account");
     }
 
-    public AccountsCrudPanel(int crudMode, Object[] accountLabelArray)
+    public AccountsCrudPanel(int crudMode, Object[] accountLabelArray, JComboBox<String> selectAccountBox )
     {
         // Set crudMode
         this.crudMode = crudMode;
         this.accountLabelArray = accountLabelArray;
+        this.selectAccountBox = selectAccountBox;
 
         this.setBackground(Color.gray);
         this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        this.setName("accountsPanel");
+        this.setName("Account bewerken");
     }
 
     /**
@@ -78,10 +80,17 @@ public class AccountsCrudPanel extends JPanel {
         JPanel innerBoxPanel2 = new JPanel();
         innerBoxPanel2.setLayout(new BoxLayout(innerBoxPanel2, BoxLayout.Y_AXIS));
 
-
         // Set borders
         innerFlowPanel.setBorder(BorderFactory.createTitledBorder("Account"));
-        innerFlowPanel2.setBorder(BorderFactory.createTitledBorder("Account gegevens"));
+
+        if(this.crudMode == 0)
+        {
+            innerFlowPanel2.setBorder(BorderFactory.createTitledBorder("Nieuw account"));
+        }
+        else
+        {
+            innerFlowPanel2.setBorder(BorderFactory.createTitledBorder("Account bewerken"));
+        }
 
         // Set colors
         innerBoxPanel2.setBackground(Color.gray);
@@ -190,8 +199,18 @@ public class AccountsCrudPanel extends JPanel {
         innerBoxPanel2.add(accountHouseNumberPanel);
         innerBoxPanel2.add(accountResidencePanel);
 
-        JButton crudButton = new JButton("Voeg toe");
-        crudButton.addActionListener(new AccountsCrudPanelActionListener(accountFieldArray, this.crudMode));
+        JButton crudButton = new JButton();
+
+        if(this.crudMode == 0)
+        {
+            crudButton.setText("Voeg toe");
+        }
+        else
+        {
+            crudButton.setText("Sla op");
+        }
+
+        crudButton.addActionListener(new AccountsCrudPanelActionListener(accountFieldArray, this.crudMode, this.selectAccountBox));
 
         innerButtonPanel.add(crudButton);
         innerBoxPanel2.add(innerButtonPanel);

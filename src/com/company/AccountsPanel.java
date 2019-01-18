@@ -189,11 +189,10 @@ public class AccountsPanel extends JPanel {
         accountResidencePanel.add(accountResidenceSelectLabel);
 
         JButton editAccountButton = new JButton("Bewerk");
-        System.out.println("WWRWK");
-        System.out.println(((JLabel)accountLabelArray[0]).getText());
-        editAccountButton.addActionListener(new AccountsPanelCrudActionListener(1, accountLabelArray));
+        editAccountButton.addActionListener(new AccountsPanelCrudActionListener(1, accountLabelArray, selectAccountBox));
 
         JButton deleteAccountButton = new JButton("Verwijder");
+        deleteAccountButton.addActionListener(new AccountsPanelDeleteActionListener(selectAccountBox));
 
         accountButtonsPanel.add(editAccountButton);
         accountButtonsPanel.add(deleteAccountButton);
