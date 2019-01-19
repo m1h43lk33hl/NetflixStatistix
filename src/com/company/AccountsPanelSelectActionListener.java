@@ -85,7 +85,7 @@ public class AccountsPanelSelectActionListener implements ActionListener {
     }
 
     /**
-     * Returns a list of names of accounts by selected profile
+     * Returns a list of names of profiles by selected account
      *
      * @return
      */

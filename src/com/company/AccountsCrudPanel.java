@@ -14,40 +14,42 @@ public class AccountsCrudPanel extends JPanel {
     private JComboBox<String> selectProfileBox;
     private JLabel selectedAccountNameSeries;
     private JLabel selectedAccountNameFilm;
+    private JButton selectAccountButton;
 
     private int crudMode = 0; // 0 = Create, 1=Update (edit)
     private Object[] accountLabelArray;
     private JComboBox<String> selectAccountBox;
-
-    // Internal frame
     private InternalFrame internalFrame;
+
 
     /**
      * Class constructor for AccountsPanel
      *
      */
-    public AccountsCrudPanel(int crudMode)
+    public AccountsCrudPanel(int crudMode, JButton selectAccountButton, JComboBox<String> selectAccountBox )
     {
         // Set crudMode
         this.crudMode = crudMode;
+        this.selectAccountButton = selectAccountButton;
+        this.selectAccountBox = selectAccountBox;
 
         this.setBackground(Color.gray);
-        this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         this.setName("Nieuw account");
     }
 
-    public AccountsCrudPanel(int crudMode, Object[] accountLabelArray, JComboBox<String> selectAccountBox )
+    public AccountsCrudPanel(int crudMode, JButton selectAccountButton ,Object[] accountLabelArray, JComboBox<String> selectAccountBox )
     {
         // Set crudMode
         this.crudMode = crudMode;
+        this.selectAccountButton = selectAccountButton;
         this.accountLabelArray = accountLabelArray;
         this.selectAccountBox = selectAccountBox;
 
         this.setBackground(Color.gray);
-        this.createComponents();
+//        this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -154,7 +156,7 @@ public class AccountsCrudPanel extends JPanel {
 
         JButton createProfileButton = new JButton("Nieuw");
 
-        createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0));
+        createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0, selectAccountButton, selectAccountBox));
 
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
@@ -210,7 +212,7 @@ public class AccountsCrudPanel extends JPanel {
             crudButton.setText("Sla op");
         }
 
-        crudButton.addActionListener(new AccountsCrudPanelActionListener(accountFieldArray, this.crudMode, this.selectAccountBox));
+        crudButton.addActionListener(new AccountsCrudPanelActionListener(accountFieldArray, this.selectAccountButton, this.crudMode, this.selectAccountBox, this.internalFrame));
 
         innerButtonPanel.add(crudButton);
         innerBoxPanel2.add(innerButtonPanel);
@@ -226,12 +228,12 @@ public class AccountsCrudPanel extends JPanel {
         this.add(innerFlowPanel2);
 
         // Create space for panel alignment
-        for(int x = 0; x < 10; x++)
-        {
-            fillerPanel = new JPanel();
-            fillerPanel.setBackground(Color.gray);
-            this.add(fillerPanel);
-        }
+//        for(int x = 0; x < 10; x++)
+//        {
+//            fillerPanel = new JPanel();
+//            fillerPanel.setBackground(Color.gray);
+//            this.add(fillerPanel);
+//        }
     }
 
     /**
@@ -256,5 +258,11 @@ public class AccountsCrudPanel extends JPanel {
         {
             return null;
         }
+    }
+
+    public void setInternalFrame(InternalFrame internalFrame) {
+        this.internalFrame = internalFrame;
+        System.out.println("HIERRR");
+        this.createComponents();
     }
 }

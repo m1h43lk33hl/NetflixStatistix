@@ -45,7 +45,11 @@ public class ProfilesPanel extends JPanel {
         JPanel innerBoxPanel = new JPanel();
         JPanel innerBoxPanel2 = new JPanel();
         JPanel recommendedPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel recommendedPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
         JPanel firstComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel secondComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
 
         innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
         innerBoxPanel2.setLayout(new BoxLayout(innerBoxPanel2, BoxLayout.Y_AXIS));
@@ -63,6 +67,9 @@ public class ProfilesPanel extends JPanel {
         innerBoxPanel.setBackground(Color.gray);
         firstComponentPanel.setBackground(Color.gray);
         recommendedPanel.setBackground(Color.gray);
+        recommendedPanel2.setBackground(Color.gray);
+        secondComponentPanel.setBackground(Color.gray);
+
 
         // Recommended panel labels
         JLabel recommendedLabel = new JLabel("Selecteer eerst een profiel.");
@@ -77,20 +84,39 @@ public class ProfilesPanel extends JPanel {
         JButton selectProfileButton = new JButton("Selecteer");
         selectProfileButton.addActionListener(new ProfilesPanelSelectActionListener(this.selectedProfileName, this.selectProfileBox, recommendedLabel, this.selectedAccountName));
 
+        JButton createProfileButton = new JButton("Nieuw");
+        createProfileButton.addActionListener(new ProfilesPanelCrudActionListener(0, selectProfileBox, this.selectedAccountName));
+
         firstComponentPanel.add(selectProfileLabel);
         firstComponentPanel.add(this.selectProfileBox);
         firstComponentPanel.add(selectProfileButton);
+        firstComponentPanel.add(createProfileButton);
+
+        JButton editProfileButton = new JButton("Bewerk");
+        editProfileButton.addActionListener(new ProfilesPanelCrudActionListener(1, selectProfileBox, this.selectedAccountName));
+
+        JButton deleteProfileButton = new JButton("Verwijder");
+        deleteProfileButton.addActionListener(new ProfilesPanelDeleteActionListener(selectProfileBox, this.selectedAccountName));
+
+        secondComponentPanel.add(editProfileButton);
+        secondComponentPanel.add(deleteProfileButton);
 
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
         innerBoxPanel.add(firstComponentPanel);
+        innerBoxPanel.add(secondComponentPanel);
 
         // Create and add filler panel
         fillerPanel.add(Box.createRigidArea(new Dimension(0,30))); // Create space between buttons
         fillerPanel.setBackground(Color.gray);
         innerBoxPanel.add(fillerPanel);
 
+        JButton viewLogsButton = new JButton("Bekijk logs");
+        viewLogsButton.addActionListener(new ProfilesPanelViewLogActionListener(this.selectProfileBox, this.selectedAccountName));
+        recommendedPanel2.add(viewLogsButton);
+
         recommendedPanel.add(recommendedLabel);
         innerBoxPanel2.add(recommendedPanel);
+        innerBoxPanel2.add(recommendedPanel2);
 
         innerFlowPanel.add(innerBoxPanel);
         innerFlowPanel2.add(innerBoxPanel2);

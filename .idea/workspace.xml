@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ProfilesCrudPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ProfilesCrudPanelActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/AccountsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/AccountsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/MainPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/ProfilesPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/ProfilesPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/InternalFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/InternalFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,35 +32,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="194" column="70" selection-start-line="194" selection-start-column="70" selection-end-line="194" selection-end-column="70" />
+            <state relative-caret-position="132">
+              <caret line="74" column="60" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/NetflixStatistixUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="17" selection-start-line="17" selection-end-line="34" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/InternalFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,52 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#455#456#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/MainPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+            <state relative-caret-position="204">
+              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="119">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,12 +68,88 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="238">
+              <caret line="113" column="50" lean-forward="true" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LogsCrudPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+              <folding>
+                <element signature="e#4561#4562#0" expanded="true" />
+                <element signature="e#4605#4606#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/InternalFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesCrudPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="42" lean-forward="true" selection-end-line="162" />
+              <folding>
+                <element signature="e#4880#4881#0" expanded="true" />
+                <element signature="e#4924#4925#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,36 +166,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.</find>
-      <find>filter</find>
-      <find>filter optio</find>
-      <find>select</find>
-      <find>table</find>
-      <find>seriestable</find>
-      <find>fill</find>
-      <find>filmstabl</find>
-      <find>recommend</find>
-      <find>recommendedLabel</find>
-      <find>alignment</find>
-      <find>recommendedpa</find>
-      <find>buildTableModel</find>
-      <find>selectedAccountName</find>
       <find>filter o</find>
       <find>secondComponentPanel</find>
       <find>opties</find>
       <find>selectProfileBox</find>
       <find>combobox</find>
       <find>rigid</find>
-      <find>selecteer</find>
       <find>internal</find>
       <find>nieuw</find>
       <find>setpref</find>
       <find>bewe</find>
-      <find>AccountsPanelCrudActionListener</find>
       <find>accountLabelArray</find>
       <find>selectaccount</find>
       <find>voeg toe</find>
       <find>de</find>
+      <find>selecteer</find>
+      <find>returnAccountNames</find>
+      <find>ProfilesCrudPanelActionListener</find>
+      <find>AccountsCrudPanelActionListener</find>
+      <find>box</find>
+      <find>internalframe</find>
+      <find>internalfram</find>
+      <find>internalfr</find>
+      <find>AccountsPanelCrudActionListener</find>
+      <find>sla op</find>
+      <find>createComponents</find>
+      <find>verwijder</find>
+      <find>bewerk</find>
+      <find>inter</find>
+      <find>seriesTable</find>
+      <find>buildTableModel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,11 +206,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/company/sideMenuButtonActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/accountsPanelFilterActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/AccountsPanelFilterActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/FilmsPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/FilmsPanelSelectActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ProfilesPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/com/company/SideMenuButtonActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/SouthBar.java" />
@@ -200,17 +218,26 @@
         <option value="$PROJECT_DIR$/src/com/company/SeriesPanelFilterActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/FilmsPanelFilterActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/NetflixStatistixUI.java" />
-        <option value="$PROJECT_DIR$/src/com/company/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/AccountsPanelCreateActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/AccountsCrudPanelCreateActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/InternalFrame.java" />
         <option value="$PROJECT_DIR$/src/com/company/Database.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AccountsPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AbstractAccountsCrudAction.java" />
+        <option value="$PROJECT_DIR$/src/com/company/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AccountsPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/InternalFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ProfilesCrudPanelActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ProfilesCrudPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ProfilesPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LogsCrudPanel.java" />
       </list>
     </option>
   </component>
@@ -237,6 +264,11 @@
             <path>
               <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
               <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -259,7 +291,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547837424566" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547856732648" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -319,16 +351,15 @@
       <workItem from="1547556496805" duration="18046000" />
       <workItem from="1547642315350" duration="22735000" />
       <workItem from="1547725892367" duration="3475000" />
-      <workItem from="1547811533180" duration="18857000" />
+      <workItem from="1547811533180" duration="37688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82934000" />
+    <option name="totallyTimeSpent" value="101765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29127517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -340,7 +371,7 @@
       <window_info id="DB Browser" order="7" weight="0.3295302" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -395,37 +426,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelFilterActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="34" column="15" selection-start-line="34" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" column="11" selection-start-line="40" selection-end-line="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3434">
-          <caret line="227" selection-start-line="227" selection-end-line="227" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -496,51 +500,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/InternalFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#238#239#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="287">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/AbstractAccountsCrudAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="136">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -549,15 +529,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+        <state relative-caret-position="141">
+          <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesCrudPanelActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
-          <caret line="194" column="70" selection-start-line="194" selection-start-column="70" selection-end-line="194" selection-end-column="70" />
+          <caret line="194" column="65" selection-start-line="194" selection-start-column="65" selection-end-line="194" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -566,20 +606,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="119">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesCrudPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="364">
+          <caret line="42" lean-forward="true" selection-end-line="162" />
+          <folding>
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4924#4925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="113" column="50" lean-forward="true" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="74" column="60" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/InternalFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LogsCrudPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding>
+            <element signature="e#4561#4562#0" expanded="true" />
+            <element signature="e#4605#4606#0" expanded="true" />
           </folding>
         </state>
       </provider>

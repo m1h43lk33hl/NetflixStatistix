@@ -4,6 +4,9 @@ import javax.swing.*;
 import javax.xml.crypto.Data;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountsPanelDeleteActionListener implements ActionListener {
 
@@ -21,8 +24,10 @@ public class AccountsPanelDeleteActionListener implements ActionListener {
 
         if(dialogResult == 0) {
             this.deleteAccount();
+
+            // Refresh list
+            this.selectAccountBox.setModel(new DefaultComboBoxModel<String>(this.returnAccountNames().toArray(new String[0])));
         } else {
-            System.out.println("No Option");
         }
     }
 
@@ -31,11 +36,37 @@ public class AccountsPanelDeleteActionListener implements ActionListener {
     {
         try{
             Database database = Database.getInstance();
-            database.queryDDL("");
+            System.out.println("DELETE FROM Account WHERE Naam='"+this.selectAccountBox.getSelectedItem().toString()+"';");
+            database.queryDDL("DELETE FROM Account WHERE Naam='"+this.selectAccountBox.getSelectedItem().toString()+"';");
         }
         catch (Exception e)
         {
 
+        }
+    }
+
+    /**
+     * Returns a list of account names of accounts by selected profile
+     *
+     * @return
+     */
+    private List<String> returnAccountNames() {
+        List<String> accountList = new ArrayList<String>();
+
+        try {
+            Database db = Database.getInstance();
+            ResultSet rs = db.query("SELECT Naam FROM Account");
+
+            while (rs.next()) {
+                System.out.println(rs.getString("Naam"));
+                accountList.add(rs.getString("Naam"));
+            }
+
+            return accountList;
+        }
+        catch (Exception e)
+        {
+            return null;
         }
     }
 }

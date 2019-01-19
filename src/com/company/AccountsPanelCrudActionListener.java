@@ -11,15 +11,19 @@ public class AccountsPanelCrudActionListener implements ActionListener {
     private int crudMode = 0;
     private  Object[] accountLabelArray;
     private JComboBox<String> selectAccountBox;
+    private JButton selectAccountButton;
 
-    public AccountsPanelCrudActionListener(int crudMode)
+    public AccountsPanelCrudActionListener(int crudMode, JButton selectAccountButton, JComboBox<String> selectAccountBox )
     {
         this.crudMode = crudMode;
+        this.selectAccountButton = selectAccountButton;
+        this.selectAccountBox = selectAccountBox;
     }
 
-    public AccountsPanelCrudActionListener(int crudMode, Object[] accountLabelArray, JComboBox<String> selectAccountBox)
+    public AccountsPanelCrudActionListener(int crudMode, JButton selectAccountButton, Object[] accountLabelArray, JComboBox<String> selectAccountBox)
     {
         this.crudMode = crudMode;
+        this.selectAccountButton = selectAccountButton;
         this.accountLabelArray = accountLabelArray;
         this.selectAccountBox = selectAccountBox;
     }
@@ -29,13 +33,17 @@ public class AccountsPanelCrudActionListener implements ActionListener {
 
         if(this.crudMode == 0)
         {
-            InternalFrame f = new InternalFrame(new AccountsCrudPanel(0));
-            f.run();
+            AccountsCrudPanel accountsCrudPanel = new AccountsCrudPanel(0, this.selectAccountButton, this.selectAccountBox);
+            InternalFrame internalFrame = new InternalFrame(accountsCrudPanel);
+            accountsCrudPanel.setInternalFrame(internalFrame);
+            internalFrame.run();
         }
         else
         {
-            InternalFrame f = new InternalFrame(new AccountsCrudPanel(1, this.accountLabelArray, this.selectAccountBox));
-            f.run();
+            AccountsCrudPanel accountsCrudPanel = new AccountsCrudPanel(1, this.selectAccountButton,this.accountLabelArray, this.selectAccountBox);
+            InternalFrame internalFrame = new InternalFrame(accountsCrudPanel);
+            accountsCrudPanel.setInternalFrame(internalFrame);
+            internalFrame.run();
         }
     }
 }

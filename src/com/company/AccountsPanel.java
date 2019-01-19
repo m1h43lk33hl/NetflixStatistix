@@ -134,7 +134,7 @@ public class AccountsPanel extends JPanel {
         selectAccountButton.addActionListener(new AccountsPanelSelectActionListener(this.selectProfileBox, selectAccountBox, this.selectedAccountNameSeries, this.selectedAccountNameFilm, accountLabelArray));
 
         JButton createProfileButton = new JButton("Nieuw");
-        createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0));
+        createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0, selectAccountButton, selectAccountBox));
 
         firstComponentPanel.add(selectProfileLabel);
         firstComponentPanel.add(selectAccountBox);
@@ -189,7 +189,7 @@ public class AccountsPanel extends JPanel {
         accountResidencePanel.add(accountResidenceSelectLabel);
 
         JButton editAccountButton = new JButton("Bewerk");
-        editAccountButton.addActionListener(new AccountsPanelCrudActionListener(1, accountLabelArray, selectAccountBox));
+        editAccountButton.addActionListener(new AccountsPanelCrudActionListener(1, selectAccountButton, accountLabelArray, selectAccountBox));
 
         JButton deleteAccountButton = new JButton("Verwijder");
         deleteAccountButton.addActionListener(new AccountsPanelDeleteActionListener(selectAccountBox));

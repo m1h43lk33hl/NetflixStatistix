@@ -22,7 +22,7 @@ public class MainPanel extends JPanel {
         this.setBackground(Color.gray);
 
         // Create internal frame
-        InternalFrame internalFrame = new InternalFrame(new AccountsCrudPanel(0));
+        InternalFrame internalFrame = new InternalFrame(new AccountsCrudPanel(0, new JButton(), new JComboBox<String>() ));
 
         // Create panels for cardlayout
         FilmsPanel filmsPanel = new FilmsPanel();
