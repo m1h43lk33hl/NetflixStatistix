@@ -1,6 +1,7 @@
 package com.company;
 
 import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
+import org.jetbrains.annotations.Contract;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -25,12 +26,15 @@ public class LogsCrudPanel extends JPanel {
     private JTextField profileAgeTextField = new JTextField();
     private InternalFrame internalFrame;
 
-    public LogsCrudPanel() {
+    public LogsCrudPanel(JComboBox<String> selectProfileBox, JLabel selectedAccountName) {
         this.setBackground(Color.gray);
         // Create components is in the public setInternalFrame method to allow the pass of the reference
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         this.setName("profilesPanel");
+        this.selectedAccountName = selectedAccountName;
+        this.selectProfileBox = selectProfileBox;
+
     }
 
 
@@ -69,25 +73,43 @@ public class LogsCrudPanel extends JPanel {
         // If you select a serie->new selection for episode cell
         // If you select a serie AND a movie -> ...
 
-        String[] bs = {"ewa", "ewoe"};
-
         JTable table = new JTable(this.buildTableModel()){
+
+
+            @Contract(pure = true)
+            public boolean isCellEditable(int rowindex, int colindex)
+            {
+                try{
+                    if(this.getValueAt(rowindex, colindex).toString().equals(""))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+            }
+
 
             //  Determine editor to be used by row
             public TableCellEditor getCellEditor(int row, int column)
             {
                 int modelColumn = convertColumnIndexToModel( column );
 
-                if (modelColumn == 1)
+                if (modelColumn == 2)
                 {
-                    JComboBox<String> comboBox1 = new JComboBox<String>(bs);
+                    JComboBox<String> comboBox1 = new JComboBox<String>();
                     System.out.println( this.getValueAt(row, column-1).toString());
                     return new DefaultCellEditor( returnEpisodeBox( this.getValueAt(row, column-1).toString() ) );
                 }
                 else
                     return super.getCellEditor(row, column);
             }
-
         };
 
         this.setSerieTitle(table);
@@ -102,13 +124,17 @@ public class LogsCrudPanel extends JPanel {
         tablePane.setMaximumSize(new Dimension(600, 130));
 
         JButton newLogButton = new JButton("Nieuw");
+        newLogButton.addActionListener(new LogsCrudPanelCreateActionListener(this.selectProfileBox, this.selectedAccountName, table));
 
         firstComponentPanel.add(tablePane);
         firstComponentPanel.add(newLogButton);
 
 
         JButton saveLogButton = new JButton("Opslaan");
+        saveLogButton.addActionListener(new LogsCrudPanelSaveActionListener(table, this.selectProfileBox, this.selectedAccountName));
+
         JButton deleteLogButton = new JButton("Verwijder");
+        deleteLogButton.addActionListener(new LogsCrudPanelDeleteActionListener(table));
 
         secondComponentPanel.add(saveLogButton);
         secondComponentPanel.add(deleteLogButton);
@@ -136,6 +162,9 @@ public class LogsCrudPanel extends JPanel {
         return this.selectProfileBox;
     }
 
+    /**
+     * Fills fields
+     */
     private void fillFields() {
         try {
             Database database = Database.getInstance();
@@ -155,6 +184,11 @@ public class LogsCrudPanel extends JPanel {
         }
     }
 
+    /**
+     * Sets internal frame
+     *
+     * @param internalFrame
+     */
     public void setInternalFrame(InternalFrame internalFrame) {
         this.internalFrame = internalFrame;
         this.createComponents();
@@ -169,16 +203,38 @@ public class LogsCrudPanel extends JPanel {
 
         try {
             Database database = Database.getInstance();
-            ResultSet resultSet = database.query("SELECT Serie.Titel, Aflevering.Titel, Film.Titel,Programmalog.PercentageBekeken FROM Programmalog INNER JOIN Profiel ON Profiel.AccountNaam = 'Bas Brouwers' LEFT JOIN Film ON Film.FilmID = Programmalog.FilmID INNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID INNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID INNER JOIN Serie ON Serie.SerieID = Seizoen.SerieID WHERE Profiel.AccountNaam = 'Bas Brouwers';");
+            System.out.println("SELECT DISTINCT Programmalog.ProgrammalogID, Serie.Titel, Aflevering.Titel, Film.Titel,Programmalog.PercentageBekeken FROM Programmalog INNER JOIN Profiel ON Profiel.AccountNaam = 'Bas Brouwers' LEFT JOIN Film ON Film.FilmID = Programmalog.FilmID INNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID INNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID INNER JOIN Serie ON Serie.SerieID = Seizoen.SerieID WHERE Profiel.AccountNaam = 'Bas Brouwers';");
+
+            String SQL = "SELECT DISTINCT Afleveringlog.AfleveringlogID, Serie.Titel, Aflevering.Titel, NULL AS ' ', Afleveringlog.PercentageBekeken \n" +
+                    "FROM Afleveringlog \n" +
+                    "INNER JOIN Profiel ON Profiel.ProfielID = Afleveringlog.ProfielID\n" +
+                    "INNER JOIN Aflevering ON Aflevering.AfleveringID = Afleveringlog.AfleveringID \n" +
+                    "INNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID \n" +
+                    "INNER JOIN Serie ON Serie.SerieID = Seizoen.SerieID \n" +
+                    "WHERE Profiel.AccountNaam = '"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"'"+
+                    "\n" +
+                    "UNION\n" +
+                    "\n" +
+                    "SELECT DISTINCT Filmlog.FilmlogID, NULL AS ' ', NULL AS ' ', Film.Titel, Filmlog.PercentageBekeken\n" +
+                    "FROM Filmlog\n" +
+                    "INNER JOIN Profiel ON Profiel.ProfielID = Filmlog.ProfielID\n" +
+                    "INNER JOIN Film ON Film.FilmID = Filmlog.FilmID\n" +
+                    "WHERE Profiel.AccountNaam = '"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"'";
+
+
+            ResultSet resultSet = database.query(SQL);
 
             ResultSetMetaData metaData = resultSet.getMetaData();
 
             // names of columns
             Vector<String> columnNames = new Vector<String>();
             int columnCount = metaData.getColumnCount();
-            for (int column = 1; column <= columnCount; column++) {
-                columnNames.add(metaData.getColumnName(column));
-            }
+
+            columnNames.add("AfleveringID");
+            columnNames.add("Serie");
+            columnNames.add("Aflevering");
+            columnNames.add("Film");
+            columnNames.add("Bekeken (%)");
 
             // data of the table
             Vector<Vector<Object>> data = new Vector<Vector<Object>>();
@@ -187,7 +243,6 @@ public class LogsCrudPanel extends JPanel {
                 Vector<Object> vector = new Vector<Object>();
                 for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
                     vector.add(resultSet.getObject(columnIndex));
-//                    vector.add(this.returnComboBox());
                 }
                 data.add(vector);
             }
@@ -199,29 +254,20 @@ public class LogsCrudPanel extends JPanel {
 
     }
 
-//    private JComboBox<String> returnComboBox()
-//    {
-//        JComboBox<String> x = new JComboBox<>();
-//        x.addItem("je moeder");
-//        return x;
-//    }
 
     /**
-     *
+     * Sets series title
      */
     private void setSerieTitle(JTable table)
     {
 
         TableColumnModel tableColumnModel = table.getColumnModel();
 
-        TableColumn seriesColumn = tableColumnModel.getColumn(0);
-        TableColumn filmColumn = tableColumnModel.getColumn(2);
+        TableColumn seriesColumn = tableColumnModel.getColumn(1);
+        TableColumn filmColumn = tableColumnModel.getColumn(3);
 
         JComboBox<String> comboBox = new JComboBox();
-        comboBox.addItem("Geen");
-
         JComboBox<String> comboBox2 = new JComboBox();
-        comboBox2.addItem("Geen");
 
         try
         {
@@ -253,6 +299,12 @@ public class LogsCrudPanel extends JPanel {
         }
     }
 
+    /**
+     * Returns and episode combobox for table
+     *
+     * @param serie
+     * @return
+     */
     private JComboBox<String> returnEpisodeBox(String serie)
     {
 
@@ -274,6 +326,4 @@ public class LogsCrudPanel extends JPanel {
 
         return episodeBox;
     }
-
-
 }

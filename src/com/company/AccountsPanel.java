@@ -98,7 +98,7 @@ public class AccountsPanel extends JPanel {
 
         // Second ___
         JLabel accountNameLabel = new JLabel("Account Naam:");
-        JLabel accountNameSelectLabel = new JLabel();
+        JLabel accountNameSelectLabel  = new JLabel("<Geen gegevens>");
         accountNameSelectLabel.setForeground(Color.white);
 
         JLabel accountStreetNameLabel = new JLabel("Straatnaam:");
@@ -192,7 +192,7 @@ public class AccountsPanel extends JPanel {
         editAccountButton.addActionListener(new AccountsPanelCrudActionListener(1, selectAccountButton, accountLabelArray, selectAccountBox));
 
         JButton deleteAccountButton = new JButton("Verwijder");
-        deleteAccountButton.addActionListener(new AccountsPanelDeleteActionListener(selectAccountBox));
+        deleteAccountButton.addActionListener(new AccountsPanelDeleteActionListener(selectAccountBox, accountNameSelectLabel));
 
         accountButtonsPanel.add(editAccountButton);
         accountButtonsPanel.add(deleteAccountButton);

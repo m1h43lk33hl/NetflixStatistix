@@ -49,7 +49,6 @@ public class AccountsCrudPanel extends JPanel {
         this.selectAccountBox = selectAccountBox;
 
         this.setBackground(Color.gray);
-//        this.createComponents();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -136,16 +135,6 @@ public class AccountsCrudPanel extends JPanel {
             accountResidenceTextField.setText( ((JLabel)this.accountLabelArray[4]).getText() );
         }
 
-
-//        List<String> accountFieldArray = new ArrayList<>();
-//
-//        accountFieldArray.add(accountNameTextField.getText());
-//        accountFieldArray.add(accountStreetNameTextField.getText());
-//        accountFieldArray.add(accountHouseNumberTextField.getText());
-//        accountFieldArray.add(accountHouseNumberTextField.getText());
-//        accountFieldArray.add(accountResidenceTextField.getText());
-
-
         Object[] accountFieldArray = new Object[5];
         accountFieldArray[0] = accountNameTextField;
         accountFieldArray[1] = accountStreetNameTextField;
@@ -168,10 +157,7 @@ public class AccountsCrudPanel extends JPanel {
         String[] accountFilterBoxOptions = {"Gelijk aan", "Kleiner dan", "Groter dan"};
         JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
 
-//        filterAccountButton.addActionListener(new AccountsPanelFilterActionListener(filterProfileAmountTextField, accountFilterBox, selectAccountBox));
-
         JLabel filterOptionsLabel = new JLabel("Filter opties:");
-
 
         // Create and add filler panel
         fillerPanel.add(Box.createRigidArea(new Dimension(0,15))); // Create space between buttons
@@ -224,16 +210,8 @@ public class AccountsCrudPanel extends JPanel {
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
         innerFlowPanel2.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-//        this.add(innerFlowPanel);
         this.add(innerFlowPanel2);
 
-        // Create space for panel alignment
-//        for(int x = 0; x < 10; x++)
-//        {
-//            fillerPanel = new JPanel();
-//            fillerPanel.setBackground(Color.gray);
-//            this.add(fillerPanel);
-//        }
     }
 
     /**
@@ -260,9 +238,13 @@ public class AccountsCrudPanel extends JPanel {
         }
     }
 
+    /**
+     * Sets internal frame
+     *
+     * @param internalFrame
+     */
     public void setInternalFrame(InternalFrame internalFrame) {
         this.internalFrame = internalFrame;
-        System.out.println("HIERRR");
         this.createComponents();
     }
 }

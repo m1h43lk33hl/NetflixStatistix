@@ -18,10 +18,8 @@ public class Main {
      * Entry point for the NetflixStatistix application
      *
      * @param args
-     * @throws SQLException
-     * @throws ClassNotFoundException
      */
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) {
         NetflixStatistixUI UI = new NetflixStatistixUI();
         UI.run();
     }

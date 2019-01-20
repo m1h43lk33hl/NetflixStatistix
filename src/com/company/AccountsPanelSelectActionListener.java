@@ -45,6 +45,12 @@ public class AccountsPanelSelectActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
+        if(this.selectAccountBox.getSelectedItem() == null)
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_NOT_VALID);
+            return;
+        }
+
         this.selectedAccountNameSeries.setText(this.selectAccountBox.getSelectedItem().toString());
         this.selectedAccountNameFilm.setText(this.selectAccountBox.getSelectedItem().toString());
 

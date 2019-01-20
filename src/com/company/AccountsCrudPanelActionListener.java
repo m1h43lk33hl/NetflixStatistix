@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +9,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class AccountsCrudPanelActionListener handles actions for AccountsCrudPanel
+ */
 public class AccountsCrudPanelActionListener implements ActionListener  {
 
     private Object[] accountFieldArray;
@@ -15,6 +20,15 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
     private JButton selectAccountButton;
     private InternalFrame internalFrame;
 
+    /**
+     * Class constructor for AccountsCrudPanelActionListener
+     *
+     * @param accountFieldArray
+     * @param selectAccountButton
+     * @param crudMode
+     * @param selectAccountBox
+     * @param internalFrame
+     */
     public AccountsCrudPanelActionListener(Object[] accountFieldArray, JButton selectAccountButton, int crudMode, JComboBox<String> selectAccountBox, InternalFrame internalFrame)
     {
         this.accountFieldArray = accountFieldArray;
@@ -24,25 +38,27 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
         this.internalFrame = internalFrame;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
-        System.out.println("asdadsa");
-        System.out.println(this.crudMode);
 
         if (this.crudMode == 0) {
-            this.createAccount();
+            if(!this.createAccount())
+            {
+                return;
+            }
+
         } else {
-            System.out.println("asIIII");
-            System.out.println(this.crudMode);
-            this.updateAccount();
+            if(!this.updateAccount())
+            {
+                return;
+            }
         }
-
-        // UPDATE Components
-//        this.selectAccountBox = new JComboBox<>(this.returnAccountNames().toArray(new String[0]));
-
-        // SET TO SELECTED
-        // TRIGGER SELECT BUTTON
 
         if(this.crudMode == 1)
         {
@@ -56,17 +72,21 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
             this.selectAccountBox.setSelectedItem( ((JTextField)this.accountFieldArray[0]).getText());
         }
 
-        // Close frame
         this.internalFrame.close();
-
 
     }
 
-    private void updateAccount()
+    /**
+     * Updates account and returns false when failed
+     *
+     * @return
+     */
+    private Boolean updateAccount()
     {
         try{
             Database database = Database.getInstance();
             String extra = ((JTextField)this.accountFieldArray[3]).getText();
+
 
             if(extra.equals(""))
             {
@@ -81,17 +101,25 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
                     "SET Naam='"+((JTextField)this.accountFieldArray[0]).getText()+"', Straatnaam='"+((JTextField)this.accountFieldArray[1]).getText()+"', Huisnummer="+((JTextField)this.accountFieldArray[2]).getText()+", Toevoeging="+extra+", Woonplaats='"+((JTextField)this.accountFieldArray[4]).getText()+"'\n" +
                     "WHERE Naam='"+this.selectAccountBox.getSelectedItem().toString()+"';";
 
-            System.out.println(SQL);
             database.queryDDL(SQL);
+
+            return true;
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_DATA_NOT_VALID);
+            return  false;
         }
+
     }
 
 
-    private void createAccount()
+    /**
+     * Creates account and returns false when failed
+     *
+     * @return
+     */
+    private Boolean createAccount()
     {
         try{
 
@@ -107,13 +135,22 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
                 extra = "'"+extra+"'";
             }
 
+            // Error if account already exists
+            String SQLcheck = "SELECT Account.Naam FROM Account WHERE Account.Naam = '"+((JTextField)this.accountFieldArray[0]).getText()+"';";
+            if (database.query(SQLcheck).next()) {
+                ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_EXISTS);
+                return false;
+            }
+
             String SQL = "INSERT INTO Account VALUES('"+ ((JTextField)this.accountFieldArray[0]).getText() +"', '"+((JTextField)this.accountFieldArray[1]).getText()+"', "+((JTextField)this.accountFieldArray[2]).getText()+", "+extra+", '"+((JTextField)this.accountFieldArray[4]).getText()+"')";
             System.out.println(SQL);
             database.query(SQL);
+            return true;
         }
         catch (Exception e)
         {
-
+            ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_DATA_NOT_VALID);
+            return false;
         }
     }
 

@@ -3,16 +3,27 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class InternalFrame is an InternalFrame for internal windows
+ */
 public class InternalFrame implements Runnable {
 
     private JPanel mainPanel;
     private JFrame internalFrame;
 
+    /**
+     * Class constructor for InternalFrame
+     *
+     * @param mainPanel
+     */
     public InternalFrame(JPanel mainPanel)
     {
         this.mainPanel = mainPanel;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void run() {
         JFrame frame = new JFrame();
@@ -35,6 +46,9 @@ public class InternalFrame implements Runnable {
         frame.setVisible(true);
     }
 
+    /**
+     * Closes InternalFrame
+     */
     public void close()
     {
         this.internalFrame.dispose();

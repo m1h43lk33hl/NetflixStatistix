@@ -8,17 +8,35 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class AccountsPanelDeleteActionListener handles delete function of class AccountsPanel
+ */
 public class AccountsPanelDeleteActionListener implements ActionListener {
 
     private JComboBox<String> selectAccountBox;
+    private JLabel accountLabel;
 
-    public AccountsPanelDeleteActionListener(JComboBox<String> selectAccountBox)
+    public AccountsPanelDeleteActionListener(JComboBox<String> selectAccountBox, JLabel accountLabel)
     {
         this.selectAccountBox = selectAccountBox;
+        this.accountLabel = accountLabel;
+
     }
 
+    /**
+     * @{@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+
+        // Error if no account is selected
+        if( (this.accountLabel).getText().equals("<Geen gegevens>")){
+            ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_NOT_SELECTED);
+            return;
+        }
+
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(null, "Weet je het zeker", "Verwijder account", dialogButton);
 
@@ -31,7 +49,9 @@ public class AccountsPanelDeleteActionListener implements ActionListener {
         }
     }
 
-
+    /**
+     * Deletes account
+     */
     private void deleteAccount()
     {
         try{

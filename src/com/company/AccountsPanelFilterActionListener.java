@@ -39,6 +39,16 @@ public class AccountsPanelFilterActionListener implements ActionListener
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
+        // Check if filter has numerical values
+        try{
+            int x = Integer.parseInt(this.filterProfileAmountTextField.getText().toString());
+        }
+        catch (Exception e)
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.FILTER_NOT_NUMERICAL);
+            return;
+        }
+
         DefaultComboBoxModel model = new DefaultComboBoxModel( this.getFilteredAccountNames().toArray(new String[0]));
         this.selectProfileBox.setModel(model);
     }

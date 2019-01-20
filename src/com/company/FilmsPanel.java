@@ -85,17 +85,11 @@ public class FilmsPanel extends JPanel {
         firstComponentPanel.add(tablePane);
 
         // Add components to third component panel
-        JLabel filterOptionsLabel = new JLabel("Filter opties:");
+        JLabel filterOptionsLabel = new JLabel("Filter opties (per account):");
         secondComponentPanel.add(filterOptionsLabel);
 
         // Add components to second component panel
         JLabel filterAccountsLabel = new JLabel("Bekeken door:");
-
-//        String[] accountFilterBoxOptions = {"Profiel", "Account"};
-//        JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
-
-//        thirdComponentPanel.add(filterAccountsLabel);
-//        thirdComponentPanel.add(accountFilterBox);
 
         // add components to forth component panel
         JLabel timeSpanLabel = new JLabel("Tijdsduur:");
@@ -142,7 +136,7 @@ public class FilmsPanel extends JPanel {
         fifthComponentPanel.add(movieSelectedLabel);
 
         JButton selectMovieButton = new JButton("Select");
-        selectMovieButton.addActionListener(new FilmsPanelSelectActionListener(filmsTable, movieSelectedLabel, watchByAmountLabel));
+        selectMovieButton.addActionListener(new FilmsPanelSelectActionListener(filmsTable, movieSelectedLabel, watchByAmountLabel, this.selectedAccountName));
 
         sixthComponentPanel.add(selectMovieButton);
 

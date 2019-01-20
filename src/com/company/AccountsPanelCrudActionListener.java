@@ -28,6 +28,11 @@ public class AccountsPanelCrudActionListener implements ActionListener {
         this.selectAccountBox = selectAccountBox;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
@@ -40,6 +45,12 @@ public class AccountsPanelCrudActionListener implements ActionListener {
         }
         else
         {
+            // Error if no account is selected
+            if( ((JLabel) this.accountLabelArray[0]).getText().equals("<Geen gegevens>")){
+                ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_NOT_SELECTED);
+                return;
+            }
+
             AccountsCrudPanel accountsCrudPanel = new AccountsCrudPanel(1, this.selectAccountButton,this.accountLabelArray, this.selectAccountBox);
             InternalFrame internalFrame = new InternalFrame(accountsCrudPanel);
             accountsCrudPanel.setInternalFrame(internalFrame);

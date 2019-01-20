@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class ProfilesCrudPanelActionListener handles logic for ProfilesCrudPanel
+ */
 public class ProfilesCrudPanelActionListener implements ActionListener {
 
     private JComboBox<String> selectProfileBox;
@@ -17,6 +20,16 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
     private InternalFrame internalFrame;
 
 
+    /**
+     * Class constructor for ProfilesCrudPanelActionListener
+     *
+     * @param crudMode
+     * @param selectProfileBox
+     * @param selectedAccountName
+     * @param profileNameTextField
+     * @param profileAgeTextField
+     * @param internalFrame
+     */
     public ProfilesCrudPanelActionListener(int crudMode, JComboBox<String> selectProfileBox, JLabel selectedAccountName, JTextField profileNameTextField, JTextField profileAgeTextField, InternalFrame internalFrame)
     {
         this.crudMode = crudMode;
@@ -28,52 +41,94 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
     }
 
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
         if(this.crudMode==0)
         {
-            this.createProfile();
+            if(this.createProfile())
+            {
+                // Refresh profile box
+                this.selectProfileBox.setModel(new DefaultComboBoxModel<String>(this.returnProfileNames().toArray(new String[0])));
+                this.selectProfileBox.setSelectedItem( ((JTextField)this.profileNameTextField).getText());
+
+                // Close JFrame
+                this.internalFrame.close();
+            }
+
         }
         else
         {
-            this.editProfile();
+            if(this.editProfile())
+            {
+                // Refresh profile box
+                this.selectProfileBox.setModel(new DefaultComboBoxModel<String>(this.returnProfileNames().toArray(new String[0])));
+                this.selectProfileBox.setSelectedItem( ((JTextField)this.profileNameTextField).getText());
+
+                // Close JFrame
+                this.internalFrame.close();            }
         }
-
-        // Refresh profile box
-        this.selectProfileBox.setModel(new DefaultComboBoxModel<String>(this.returnProfileNames().toArray(new String[0])));
-        this.selectProfileBox.setSelectedItem( ((JTextField)this.profileNameTextField).getText());
-
-        // Close JFrame
-        this.internalFrame.close();
-
     }
 
-    private void createProfile()
+    /**
+     * Creates a profile
+     *
+     * @return
+     */
+    private boolean createProfile()
     {
+
         try{
             Database database = Database.getInstance();
+
+            String SQLcheck = "SELECT * FROM Profiel WHERE Profiel.AccountNaam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.profileNameTextField.getText()+"';";
+            if (database.query(SQLcheck).next()) {
+                ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_DATA_NOT_VALID);
+                return false;
+            }
+
             String SQL = "INSERT INTO Profiel VALUES('"+this.selectedAccountName.getText()+"', '"+this.profileNameTextField.getText()+"', "+this.profileAgeTextField.getText()+");";
             System.out.println(SQL);
             database.queryDDL(SQL);
+            return true;
         }
         catch (Exception e)
         {
-
+            ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_DATA_NOT_VALID);
+            return false;
         }
     }
 
-    private void editProfile()
+    /**
+     * Edits a profile
+     *
+     * @return
+     */
+    private boolean editProfile()
     {
         try{
             Database database = Database.getInstance();
+
+            String SQLcheck = "SELECT * FROM Profiel WHERE Profiel.AccountNaam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.profileNameTextField.getText()+"';";
+            if (database.query(SQLcheck).next()) {
+                ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_DATA_NOT_VALID);
+                return false;
+            }
+
             String SQL = "UPDATE Profiel SET Naam='"+this.profileNameTextField.getText()+"', Leeftijd="+this.profileAgeTextField.getText()+" WHERE AccountNaam = '"+this.selectedAccountName.getText()+"' AND Naam='"+this.selectProfileBox.getSelectedItem().toString()+"';";
             System.out.println(SQL);
             database.queryDDL(SQL);
+            return true;
         }
         catch (Exception e)
         {
-
+            ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_DATA_NOT_VALID);
+            return false;
         }
     }
 

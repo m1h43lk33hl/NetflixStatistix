@@ -44,7 +44,22 @@ public class FilmsPanelFilterActionListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+
+        if(this.selectedAccountName.getText().equals(""))
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_NOT_SELECTED);
+            return;
+        }
+        if(this.filmsTable.getSelectionModel().isSelectionEmpty())
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.ROW_NOT_SELECTED);
+            return;
+        }
+
         this.filmsTable.setModel(this.buildTableModel());
+
+
+
     }
 
     /**
@@ -81,12 +96,10 @@ public class FilmsPanelFilterActionListener implements ActionListener {
         }
 
         String SQL = "SELECT Film.FilmID, Film.Titel, Film.Genre, Film.Tijdsduur, Film.Taal, Film.Leeftijdsindicatie FROM Film \n" +
-                "\tINNER JOIN Programmalog ON Programmalog.FilmID = Film.FilmID \n" +
+                "\tINNER JOIN Filmlog ON Filmlog.FilmID = Film.FilmID \n" +
                 "\tINNER JOIN Account ON Account.Naam = '"+this.selectedAccountName.getText()+"' \n" +
-                "WHERE Programmalog.PercentageBekeken = 100 \n" +
+                "WHERE Filmlog.PercentageBekeken = 100 \n" +
                 "\t "+ageIndicationSelector+" "+orderBy+"; ";
-
-        System.out.println(SQL);
 
         try {
             Database database = Database.getInstance();

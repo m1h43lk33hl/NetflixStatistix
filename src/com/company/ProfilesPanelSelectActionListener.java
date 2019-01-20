@@ -38,6 +38,13 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+
+        if(this.selectProfileBox.getSelectedItem() == null || this.selectProfileBox.getSelectedItem().toString().equals("<Geen gegevens>"))
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_NOT_SELECTED);
+            return;
+        }
+
         this.selectedProfileName.setText(this.selectProfileBox.getSelectedItem().toString());
         this.setRecommendedLabel();
     }
@@ -53,38 +60,38 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
         String SQL1 = "SELECT Titel FROM Serie \n" +
                 "WHERE Serie.Genre = \n" +
                 "\t(SELECT TOP 1 Serie.Genre \n" +
-                "\tFROM Programmalog \n" +
-                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID \n" +
+                "\tFROM Afleveringlog \n" +
+                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Afleveringlog.AfleveringID \n" +
                 "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
                 "\tINNER JOIN Serie ON Seizoen.SerieID = Serie.SerieID \n" +
-                "\tWHERE Programmalog.ProfielID IN \n" +
+                "\tWHERE Afleveringlog.ProfielID IN \n" +
                 "\t\t(SELECT Profiel.ProfielID \n" +
                 "\t\tFROM Profiel INNER JOIN Account \n" +
                 "\t\tON Account.Naam = Profiel.AccountNaam \n" +
                 "\t\tWHERE Account.Naam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"') \n" +
-                "\t\tAND Programmalog.PercentageBekeken > 80) \n" +
-                "\tAND Serie.Titel != (SELECT Serie.Titel FROM Programmalog \n" +
-                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID \n" +
+                "\t\tAND Afleveringlog.PercentageBekeken > 80) \n" +
+                "\tAND Serie.Titel NOT IN (SELECT Serie.Titel FROM Afleveringlog \n" +
+                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Afleveringlog.AfleveringID \n" +
                 "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
                 "\tINNER JOIN Serie ON Seizoen.SerieID = Serie.SerieID  \n" +
-                "\tWHERE Programmalog.ProfielID IN \n" +
+                "\tWHERE Afleveringlog.ProfielID IN \n" +
                 "\t\t(SELECT Profiel.ProfielID \n" +
                 "\t\tFROM Profiel \n" +
                 "\t\tINNER JOIN Account ON Account.Naam = Profiel.AccountNaam \n" +
-                "\t\tWHERE Account.Naam='"+this.selectedAccountName.getText()+"') \n" +
-                "\t\tAND Programmalog.PercentageBekeken > 80);";
+                "\t\tWHERE Account.Naam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"') \n" +
+                "\t\tAND Afleveringlog.PercentageBekeken > 80);";
 
         String SQL2 = "SELECT Serie.Titel \n" +
-                "\tFROM Programmalog \n" +
-                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Programmalog.AfleveringID\n" +
+                "\tFROM Afleveringlog \n" +
+                "\tINNER JOIN Aflevering ON Aflevering.AfleveringID=Afleveringlog.AfleveringID\n" +
                 "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
                 "\tINNER JOIN Serie ON Seizoen.SerieID = Serie.SerieID \n" +
-                "\tWHERE Programmalog.ProfielID IN \n" +
+                "\tWHERE Afleveringlog.ProfielID IN \n" +
                 "\t\t(SELECT Profiel.ProfielID \n" +
                 "\t\tFROM Profiel INNER JOIN Account \n" +
                 "\t\tON Account.Naam = Profiel.AccountNaam \n" +
                 "\t\tWHERE Account.Naam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"') \n" +
-                "\t\tAND Programmalog.PercentageBekeken > 80";
+                "\t\tAND Afleveringlog.PercentageBekeken > 80";
 
         try {
 
@@ -94,24 +101,29 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
             String serieToWatch = "";
 
             if (!resultSet1.next() ) {
+                System.out.println("OPOPOP");
                 this.recommendedLabel.setText("Geen recommendanties gevonden voor "+this.selectProfileBox.getSelectedItem().toString()+".");
             } else {
+                System.out.println("XXXXX");
 
                 serieToWatch = resultSet1.getString("Titel");
 
                 do {
                     //statement(s)
                 } while(resultSet1.next());
+
+
+                // Second query
+                ResultSet resultSet2 = Database.getInstance().query(SQL2);
+
+                while(resultSet2.next())
+                {
+                    this.recommendedLabel.setText("Omdat je naar "+resultSet2.getString("Titel")+" hebt gekeken, is de volgende serie wellicht ook interessant: "+ serieToWatch);
+                    break;
+                }
+
             }
 
-            // Second query
-            ResultSet resultSet2 = Database.getInstance().query(SQL2);
-
-            while(resultSet2.next())
-            {
-                this.recommendedLabel.setText("Omdat je naar "+resultSet2.getString("Titel")+" hebt gekeken, is de volgende serie wellicht ook interessant: "+ serieToWatch);
-                break;
-            }
 
         }
         catch (Exception e)

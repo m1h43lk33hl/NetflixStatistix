@@ -7,19 +7,40 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class ProfilesPanelDeleteActionListener handles delete logic for ProfilesPanel
+ */
 public class ProfilesPanelDeleteActionListener implements ActionListener {
 
     private JComboBox<String> selectProfileBox;
     private JLabel selectedAccountName;
 
+    /**
+     * Class constructor
+     *
+     * @param selectProfileBox
+     * @param selectedAccountName
+     */
     public ProfilesPanelDeleteActionListener(JComboBox<String> selectProfileBox, JLabel selectedAccountName)
     {
         this.selectProfileBox = selectProfileBox;
         this.selectedAccountName = selectedAccountName;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param actionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+
+        if(this.selectProfileBox.getSelectedItem() == null || this.selectProfileBox.getSelectedItem().toString().equals("<Geen gegevens>"))
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_NOT_SELECTED);
+            return;
+        }
+
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(null, "Weet je het zeker", "Verwijder account", dialogButton);
 
@@ -33,6 +54,9 @@ public class ProfilesPanelDeleteActionListener implements ActionListener {
         }
     }
 
+    /**
+     * Deletes profile
+     */
     private void deleteProfile()
     {
         try{

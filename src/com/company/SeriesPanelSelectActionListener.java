@@ -44,6 +44,19 @@ public class SeriesPanelSelectActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
+
+        if(this.selectedAccountName.getText().equals(""))
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_NOT_SELECTED);
+            return;
+        }
+
+        if(this.seriesTable.getSelectionModel().isSelectionEmpty())
+        {
+            ErrorDialog.showErrorDialog(ErrorMessages.ROW_NOT_SELECTED);
+            return;
+        }
+
         // Get SeriesID from table
         int seriesID = Integer.parseInt(this.seriesTable.getModel().getValueAt(this.seriesTable.getSelectedRow(), 0).toString());
 
@@ -51,20 +64,20 @@ public class SeriesPanelSelectActionListener implements ActionListener {
 
         if(this.accountFilterBox.getSelectedItem().toString().equals("Account"))
         {
-            SQL = "SELECT Aflevering.AfleveringID, Aflevering.Titel, AVG(Programmalog.PercentageBekeken) as 'PercentageBekeken' FROM Programmalog \n" +
-                    "\tINNER JOIN Profiel ON Profiel.ProfielID = Programmalog.ProfielID \n" +
+            SQL = "SELECT Aflevering.AfleveringID, Aflevering.Titel, AVG(Afleveringlog.PercentageBekeken) as 'PercentageBekeken' FROM Afleveringlog \n" +
+                    "\tINNER JOIN Profiel ON Profiel.ProfielID = Afleveringlog.ProfielID \n" +
                     "\tINNER JOIN Account ON Account.Naam = Profiel.AccountNaam \n" +
-                    "\tINNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID \n" +
+                    "\tINNER JOIN Aflevering ON Aflevering.AfleveringID = Afleveringlog.AfleveringID \n" +
                     "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
                     "\tINNER JOIN Serie ON Serie.SerieID = Seizoen.SeizoenID\n" +
                     "WHERE Account.Naam = '"+this.selectedAccountName.getText()+"' AND Serie.SerieID = "+seriesID+" GROUP BY Aflevering.AfleveringID, Aflevering.Titel;";
         }
         else
         {
-            SQL = "SELECT Aflevering.AfleveringID, Aflevering.Titel, AVG(Programmalog.PercentageBekeken) as 'PercentageBekeken' FROM Programmalog \n" +
-                    "\tINNER JOIN Profiel ON Profiel.ProfielID = Programmalog.ProfielID \n" +
+            SQL = "SELECT Aflevering.AfleveringID, Aflevering.Titel, AVG(Afleveringlog.PercentageBekeken) as 'PercentageBekeken' FROM Afleveringlog \n" +
+                    "\tINNER JOIN Profiel ON Profiel.ProfielID = Afleveringlog.ProfielID \n" +
                     "\tINNER JOIN Account ON Account.Naam = Profiel.AccountNaam \n" +
-                    "\tINNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID \n" +
+                    "\tINNER JOIN Aflevering ON Aflevering.AfleveringID = Afleveringlog.AfleveringID \n" +
                     "\tINNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
                     "\tINNER JOIN Serie ON Serie.SerieID = Seizoen.SeizoenID\n" +
                     "WHERE Serie.SerieID = "+seriesID+" GROUP BY Aflevering.AfleveringID, Aflevering.Titel;";
