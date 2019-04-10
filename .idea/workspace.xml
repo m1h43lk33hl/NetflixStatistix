@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" afterDir="false" />
-    </list>
+    <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -280,7 +278,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554889505141" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554889686548" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfreechart-1.0.19.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -344,12 +342,12 @@
       <workItem from="1547902474588" duration="12304000" />
       <workItem from="1547929204076" duration="3189000" />
       <workItem from="1547984467038" duration="32857000" />
-      <workItem from="1554887481338" duration="2015000" />
+      <workItem from="1554887481338" duration="2196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152130000" />
+    <option name="totallyTimeSpent" value="152311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -794,7 +792,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 package com.company.applicationlogic;
 
 /**
- * Enum ErrorMessages handles ErrorMessages 
+ * Enum ErrorMessages handles ErrorMessages  
  */
 public enum ErrorMessages {
         ACCOUNT_NOT_SELECTED(0, "Er is geen account geselecteerd!"),
