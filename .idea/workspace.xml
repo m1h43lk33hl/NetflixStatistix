@@ -2,42 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/ErrorDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ErrorMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudCreateActionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudCreatePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudCreatePanelSeriesChangeListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudPanelCreateActionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudPanelDeleteActionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LogsCrudPanelSaveActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NetflixStatistix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixStatistix.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/AccountsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/AccountsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/FilmsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/FilmsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/SouthBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/SouthBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsCrudPanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/FilmsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FilmsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/FilmsPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FilmsPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/FilmsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FilmsPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/InternalFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/InternalFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LogsCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LogsCrudPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesCrudPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesCrudPanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SeriesPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SeriesPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SeriesPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SeriesPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SouthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SouthBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/AccountsPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/FilmsPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/MainPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/NetflixStatistixUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/ProfilesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/SeriesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/SideMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/SouthBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/company/sideMenuButtonActionListener.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="1020">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+            <state relative-caret-position="459">
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="170">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanelFilterActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="127" column="1" lean-forward="true" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+            <state relative-caret-position="2023">
+              <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,14 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanelSelectActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -111,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/SideMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="408">
+              <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -126,11 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/SideMenuButtonActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="1292">
               <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelSelectActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="2159">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -271,28 +242,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
               <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
@@ -303,7 +259,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,8 +268,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548022297688" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554888227036" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfreechart-1.0.19.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -377,16 +332,17 @@
       <workItem from="1547902474588" duration="12304000" />
       <workItem from="1547929204076" duration="3189000" />
       <workItem from="1547984467038" duration="32857000" />
+      <workItem from="1554887481338" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150115000" />
+    <option name="totallyTimeSpent" value="150721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3033557" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30738255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -404,10 +360,11 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="right" id="PlantUML" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -751,28 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelCrudActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelSelectActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="1020">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -781,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelViewLogActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        <state relative-caret-position="459">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -791,8 +728,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="170">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -801,18 +738,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanelFilterActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="127" column="1" lean-forward="true" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanelSelectActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state relative-caret-position="2023">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -821,8 +748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/SideMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="408">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -833,13 +760,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/SideMenuButtonActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelDeleteActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="1292">
+          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ProfilesPanelSelectActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/SideMenuButtonActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/SeriesPanelSelectActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
