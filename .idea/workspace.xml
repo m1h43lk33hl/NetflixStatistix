@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ErrorDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsCrudPanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/FilmsPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/FilmsPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/FilmsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/FilmsPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudCreateActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudCreateActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudPanelSaveActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudPanelSaveActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesCrudPanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelViewLogActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelViewLogActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/SeriesPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/SeriesPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/SeriesPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/SeriesPanelSelectActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,8 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="51">
+              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -240,6 +222,7 @@
         <option value="$PROJECT_DIR$/src/com/company/SouthBar.java" />
         <option value="$PROJECT_DIR$/src/com/company/SeriesPanelSelectActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudPanelSaveActionListener.java" />
+        <option value="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" />
       </list>
     </option>
   </component>
@@ -297,7 +280,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554889252515" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554889505141" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfreechart-1.0.19.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -361,12 +344,12 @@
       <workItem from="1547902474588" duration="12304000" />
       <workItem from="1547929204076" duration="3189000" />
       <workItem from="1547984467038" duration="32857000" />
-      <workItem from="1554887481338" duration="1711000" />
+      <workItem from="1554887481338" duration="2015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151826000" />
+    <option name="totallyTimeSpent" value="152130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -810,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="51">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
         </state>
       </provider>
     </entry>
