@@ -1,7 +1,5 @@
 package com.company.applicationlogic;
 
-import com.company.ErrorDialog;
-import com.company.ErrorMessages;
 import com.company.datastorage.Database;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;

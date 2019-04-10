@@ -1,4 +1,4 @@
-package com.company;
+package com.company.applicationlogic;
 
 import javax.swing.*;
 
