@@ -1,13 +1,6 @@
 package com.company;
 
-import javax.swing.*;
-import javax.swing.border.Border;
-import javax.xml.crypto.Data;
-import java.awt.*;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import com.company.presentation.NetflixStatistixUI;
 
 /**
  * Class Main is the entrypoint class for the NetflixStatistix application
