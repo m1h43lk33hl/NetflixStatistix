@@ -69,4 +69,3 @@ public class SideMenuButtonActionListener implements ActionListener
 
     }
 }
-

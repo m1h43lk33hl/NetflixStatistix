@@ -101,8 +101,6 @@ public class LogsCrudPanelSaveActionListener implements ActionListener {
      * @param timeSpan
      */
     private void updateMovieLog(String filmLogID, String movie, String timeSpan) {
-        System.out.println(movie + "" + timeSpan);
-
         String SQL = "UPDATE Filmlog SET FilmID = (SELECT Film.FilmID FROM Film WHERE Film.Titel = '" + movie + "'), PercentageBekeken=" + timeSpan + " WHERE FilmlogID = " + filmLogID + ";";
 
         try {

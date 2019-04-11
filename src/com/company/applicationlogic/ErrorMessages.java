@@ -16,7 +16,6 @@ public enum ErrorMessages {
         PROFILE_DATA_NOT_VALID(9, "Profiel bestaat al of geen juiste waarden ingevoerd!"),
         LOG_DATA_PERCENTAGE_NOT_VALID(10, "Het 'percentage bekeken' moet een waarde tussen 0 en 100 hebben!");
 
-
         private final int code;
         private final String description;
 

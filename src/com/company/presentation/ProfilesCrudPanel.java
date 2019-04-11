@@ -19,18 +19,25 @@ public class ProfilesCrudPanel extends JPanel {
     private JTextField profileAgeTextField = new JTextField();
     private InternalFrame internalFrame;
 
+    /**
+     * Constructor for ProfilesCrudPanel
+     *
+     * @param crudMode
+     * @param selectProfileBox
+     * @param selectedAccountName
+     */
     public ProfilesCrudPanel(int crudMode, JComboBox<String> selectProfileBox, JLabel selectedAccountName)
     {
         this.crudMode = crudMode;
         this.selectProfileBox = selectProfileBox;
         this.selectedAccountName = selectedAccountName;
         this.setBackground(Color.gray);
+
         // Create components is in the public setInternalFrame method to allow the pass of the reference
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         this.setName("profilesPanel");
     }
-
 
     /**
      * Create AccountsPanel components
@@ -138,7 +145,6 @@ public class ProfilesCrudPanel extends JPanel {
         {
             Database database = Database.getInstance();
             String SQL = "SELECT Leeftijd FROM Profiel WHERE AccountNaam='"+this.selectedAccountName.getText()+"' AND Naam='"+this.selectProfileBox.getSelectedItem().toString()+"';";
-            System.out.println(SQL);
             ResultSet resultSet = database.query(SQL);
             int age = 0;
 
@@ -152,7 +158,7 @@ public class ProfilesCrudPanel extends JPanel {
         }
         catch (Exception e)
         {
-
+            e.printStackTrace();
         }
     }
 
@@ -160,5 +166,4 @@ public class ProfilesCrudPanel extends JPanel {
         this.internalFrame = internalFrame;
         this.createComponents();
     }
-
 }

@@ -57,7 +57,6 @@ public class AccountsPanelDeleteActionListener implements ActionListener {
     {
         try{
             Database database = Database.getInstance();
-            System.out.println("DELETE FROM Account WHERE Naam='"+this.selectAccountBox.getSelectedItem().toString()+"';");
             database.queryDDL("DELETE FROM Account WHERE Naam='"+this.selectAccountBox.getSelectedItem().toString()+"';");
         }
         catch (Exception e)
@@ -79,7 +78,6 @@ public class AccountsPanelDeleteActionListener implements ActionListener {
             ResultSet rs = db.query("SELECT Naam FROM Account");
 
             while (rs.next()) {
-                System.out.println(rs.getString("Naam"));
                 accountList.add(rs.getString("Naam"));
             }
 

@@ -88,8 +88,6 @@ public class SeriesPanelFilterActionListener implements ActionListener {
             Database database = Database.getInstance();
             ResultSet resultSet = database.query(SQL);
 
-            System.out.println(SQL);
-
             // Update chart
             ((CategoryPlot) this.barChart.getPlot()).setDataset(this.createDataset(resultSet));
 
@@ -121,7 +119,7 @@ public class SeriesPanelFilterActionListener implements ActionListener {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return dataset;

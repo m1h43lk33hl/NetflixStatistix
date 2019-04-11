@@ -84,13 +84,9 @@ public class SeriesPanelSelectActionListener implements ActionListener {
                     "WHERE Serie.SerieID = "+seriesID+" GROUP BY Aflevering.AfleveringID, Aflevering.Titel;";
         }
 
-        System.out.println(SQL);
-
         try{
             Database database = Database.getInstance();
             ResultSet resultSet = database.query(SQL);
-
-            System.out.println(SQL);
 
             // Update chart
             ((CategoryPlot) this.barChart.getPlot()).setDataset(this.createDataset(resultSet));
@@ -123,11 +119,9 @@ public class SeriesPanelSelectActionListener implements ActionListener {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return dataset;
     }
-
-
 }

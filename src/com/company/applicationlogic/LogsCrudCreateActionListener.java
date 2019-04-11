@@ -189,7 +189,6 @@ public class LogsCrudCreateActionListener implements ActionListener {
 
         try {
             Database database = Database.getInstance();
-            System.out.println("SELECT DISTINCT Programmalog.ProgrammalogID, Serie.Titel, Aflevering.Titel, Film.Titel,Programmalog.PercentageBekeken FROM Programmalog INNER JOIN Profiel ON Profiel.AccountNaam = 'Bas Brouwers' LEFT JOIN Film ON Film.FilmID = Programmalog.FilmID INNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID INNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID INNER JOIN Serie ON Serie.SerieID = Seizoen.SerieID WHERE Profiel.AccountNaam = 'Bas Brouwers';");
 
             String SQL = "SELECT DISTINCT Afleveringlog.AfleveringlogID, Serie.Titel, Aflevering.Titel, NULL AS ' ', Afleveringlog.PercentageBekeken \n" +
                     "FROM Afleveringlog \n" +
@@ -226,7 +225,6 @@ public class LogsCrudCreateActionListener implements ActionListener {
                 Vector<Object> vector = new Vector<Object>();
                 for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
                     vector.add(resultSet.getObject(columnIndex));
-//                    vector.add(this.returnComboBox());
                 }
                 data.add(vector);
             }

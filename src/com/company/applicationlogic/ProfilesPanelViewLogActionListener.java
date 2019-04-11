@@ -1,11 +1,10 @@
 package com.company.applicationlogic;
 
-        import com.company.presentation.InternalFrame;
-        import com.company.presentation.LogsCrudPanel;
-
-        import javax.swing.*;
-        import java.awt.event.ActionEvent;
-        import java.awt.event.ActionListener;
+import com.company.presentation.InternalFrame;
+import com.company.presentation.LogsCrudPanel;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
   * Class ProfilesPanelViewLogActionListener handles view logic for ProfilesPanel

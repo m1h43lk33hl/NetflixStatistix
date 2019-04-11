@@ -98,7 +98,6 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
             }
 
             String SQL = "INSERT INTO Profiel VALUES('"+this.selectedAccountName.getText()+"', '"+this.profileNameTextField.getText()+"', "+this.profileAgeTextField.getText()+");";
-            System.out.println(SQL);
             database.queryDDL(SQL);
             return true;
         }
@@ -147,7 +146,6 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
 
 
             String SQL = "UPDATE Profiel SET Naam='"+this.profileNameTextField.getText()+"', Leeftijd="+this.profileAgeTextField.getText()+" WHERE AccountNaam = '"+this.selectedAccountName.getText()+"' AND Naam='"+this.selectProfileBox.getSelectedItem().toString()+"';";
-            System.out.println(SQL);
             database.queryDDL(SQL);
             return true;
         }

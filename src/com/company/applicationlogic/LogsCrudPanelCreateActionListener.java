@@ -38,8 +38,6 @@ public class LogsCrudPanelCreateActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
-        System.out.println(this.table);
-
         LogsCrudCreatePanel logsCrudCreatePanel = new LogsCrudCreatePanel(this.selectProfileBox, this.selectedAccountName, this.table);
         InternalFrame internalFrame = new InternalFrame(logsCrudCreatePanel);
         logsCrudCreatePanel.setInternalFrame(internalFrame);

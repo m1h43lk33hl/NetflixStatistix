@@ -145,7 +145,6 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
             }
 
             String SQL = "INSERT INTO Account VALUES('"+ ((JTextField)this.accountFieldArray[0]).getText() +"', '"+((JTextField)this.accountFieldArray[1]).getText()+"', "+((JTextField)this.accountFieldArray[2]).getText()+", "+extra+", '"+((JTextField)this.accountFieldArray[4]).getText()+"')";
-            System.out.println(SQL);
             database.queryDDL(SQL);
             return true;
         }
@@ -169,7 +168,6 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
             ResultSet rs = db.query("SELECT Naam FROM Account");
 
             while (rs.next()) {
-                System.out.println(rs.getString("Naam"));
                 accountList.add(rs.getString("Naam"));
             }
 

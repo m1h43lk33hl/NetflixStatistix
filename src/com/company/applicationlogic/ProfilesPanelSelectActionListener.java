@@ -103,11 +103,8 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
             String serieToWatch = "";
 
             if (!resultSet1.next() ) {
-                System.out.println("OPOPOP");
                 this.recommendedLabel.setText("Geen recommendanties gevonden voor "+this.selectProfileBox.getSelectedItem().toString()+".");
             } else {
-                System.out.println("XXXXX");
-
                 serieToWatch = resultSet1.getString("Titel");
 
                 do {
@@ -123,10 +120,7 @@ public class ProfilesPanelSelectActionListener implements ActionListener {
                     this.recommendedLabel.setText("Omdat je naar "+resultSet2.getString("Titel")+" hebt gekeken, is de volgende serie wellicht ook interessant: "+ serieToWatch);
                     break;
                 }
-
             }
-
-
         }
         catch (Exception e)
         {

@@ -71,10 +71,6 @@ public class LogsCrudPanel extends JPanel {
         secondComponentPanel.setBackground(Color.gray);
         thirdComponentPanel.setBackground(Color.gray);
 
-        // Create JTable with dropdown menu
-        // If you select a serie->new selection for episode cell
-        // If you select a serie AND a movie -> ...
-
         JTable table = new JTable(this.buildTableModel()){
 
 
@@ -106,7 +102,6 @@ public class LogsCrudPanel extends JPanel {
                 if (modelColumn == 2)
                 {
                     JComboBox<String> comboBox1 = new JComboBox<String>();
-                    System.out.println( this.getValueAt(row, column-1).toString());
                     return new DefaultCellEditor( returnEpisodeBox( this.getValueAt(row, column-1).toString() ) );
                 }
                 else
@@ -171,7 +166,6 @@ public class LogsCrudPanel extends JPanel {
         try {
             Database database = Database.getInstance();
             String SQL = "SELECT Leeftijd FROM Profiel WHERE AccountNaam='" + this.selectedAccountName.getText() + "' AND Naam='" + this.selectProfileBox.getSelectedItem().toString() + "';";
-            System.out.println(SQL);
             ResultSet resultSet = database.query(SQL);
             int age = 0;
 
@@ -205,7 +199,6 @@ public class LogsCrudPanel extends JPanel {
 
         try {
             Database database = Database.getInstance();
-            System.out.println("SELECT DISTINCT Programmalog.ProgrammalogID, Serie.Titel, Aflevering.Titel, Film.Titel,Programmalog.PercentageBekeken FROM Programmalog INNER JOIN Profiel ON Profiel.AccountNaam = 'Bas Brouwers' LEFT JOIN Film ON Film.FilmID = Programmalog.FilmID INNER JOIN Aflevering ON Aflevering.AfleveringID = Programmalog.AfleveringID INNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID INNER JOIN Serie ON Serie.SerieID = Seizoen.SerieID WHERE Profiel.AccountNaam = 'Bas Brouwers';");
 
             String SQL = "SELECT DISTINCT Afleveringlog.AfleveringlogID, Serie.Titel, Aflevering.Titel, NULL AS ' ', Afleveringlog.PercentageBekeken \n" +
                     "FROM Afleveringlog \n" +
@@ -297,7 +290,7 @@ public class LogsCrudPanel extends JPanel {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

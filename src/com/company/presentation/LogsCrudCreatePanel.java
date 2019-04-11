@@ -148,7 +148,6 @@ public class LogsCrudCreatePanel extends JPanel {
         try {
             Database database = Database.getInstance();
             String SQL = "SELECT Leeftijd FROM Profiel WHERE AccountNaam='" + this.selectedAccountName.getText() + "' AND Naam='" + this.selectProfileBox.getSelectedItem().toString() + "';";
-            System.out.println(SQL);
             ResultSet resultSet = database.query(SQL);
             int age = 0;
 
@@ -217,5 +216,4 @@ public class LogsCrudCreatePanel extends JPanel {
         this.internalFrame = internalFrame;
         this.createComponents();
     }
-
 }

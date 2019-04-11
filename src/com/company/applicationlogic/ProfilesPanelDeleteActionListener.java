@@ -51,8 +51,6 @@ public class ProfilesPanelDeleteActionListener implements ActionListener {
             this.deleteProfile();
             // REFRESH AND CLOSE WINDOW
             this.selectProfileBox.setModel(new DefaultComboBoxModel<String>(this.returnProfileNames().toArray(new String[0])));
-        } else {
-            System.out.println("No Option");
         }
     }
 
@@ -63,7 +61,6 @@ public class ProfilesPanelDeleteActionListener implements ActionListener {
     {
         try{
             Database database = Database.getInstance();
-            System.out.println("DELETE FROM Profiel WHERE AccountNaam='"+this.selectedAccountName.getText()+"' AND Naam='"+this.selectProfileBox.getSelectedItem().toString()+"';");
             database.queryDDL("DELETE FROM Profiel WHERE AccountNaam='"+this.selectedAccountName.getText()+"' AND Naam='"+this.selectProfileBox.getSelectedItem().toString()+"';");
         }
         catch (Exception e)
