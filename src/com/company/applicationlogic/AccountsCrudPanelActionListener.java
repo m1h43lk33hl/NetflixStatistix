@@ -108,6 +108,7 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_DATA_NOT_VALID);
             return  false;
         }
@@ -145,7 +146,7 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
 
             String SQL = "INSERT INTO Account VALUES('"+ ((JTextField)this.accountFieldArray[0]).getText() +"', '"+((JTextField)this.accountFieldArray[1]).getText()+"', "+((JTextField)this.accountFieldArray[2]).getText()+", "+extra+", '"+((JTextField)this.accountFieldArray[4]).getText()+"')";
             System.out.println(SQL);
-            database.query(SQL);
+            database.queryDDL(SQL);
             return true;
         }
         catch (Exception e)

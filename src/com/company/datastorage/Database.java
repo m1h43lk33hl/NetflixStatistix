@@ -72,6 +72,7 @@ public class Database {
      */
     public void queryDDL(String query) throws SQLException {
 
+        System.out.println(query);
         Statement statement = this.connection.createStatement();
 
         // Execute query

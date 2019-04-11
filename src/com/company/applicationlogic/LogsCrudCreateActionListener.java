@@ -71,8 +71,7 @@ public class LogsCrudCreateActionListener implements ActionListener {
     {
         if(this.getSelectedRadioButton(this.buttonGroup) == 0)
         {
-            // check if log already exists
-
+            // Validate log data
             try
             {
                 Database database = Database.getInstance();
@@ -80,6 +79,13 @@ public class LogsCrudCreateActionListener implements ActionListener {
                 String SQLcheck = "SELECT * FROM Afleveringlog WHERE Afleveringlog.ProfielID = (SELECT Profiel.ProfielID FROM Profiel WHERE Profiel.AccountNaam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.selectProfileBox.getSelectedItem().toString()+"')  AND Afleveringlog.AfleveringID = (SELECT TOP 1 Aflevering.AfleveringID FROM Aflevering INNER JOIN Seizoen ON Aflevering.SezoenID = Seizoen.SeizoenID INNER JOIN Serie ON Serie.SerieID = Seizoen.SerieID WHERE Serie.Titel = '"+this.selectSerieBox.getSelectedItem().toString()+"' AND Aflevering.Titel = '"+this.selectEpisodeBox.getSelectedItem().toString()+"');";
                 if (database.query(SQLcheck).next()) {
                     ErrorDialog.showErrorDialog(ErrorMessages.LOG_DATA_NOT_VALID);
+                    return;
+                }
+
+                // Check if percentage is between 0 and 100
+                if(!(Integer.parseInt(this.timeSpanTextField.getText()) >= 0 && Integer.parseInt(this.timeSpanTextField.getText()) <= 100)  ){
+
+                    ErrorDialog.showErrorDialog(ErrorMessages.LOG_DATA_PERCENTAGE_NOT_VALID);
                     return;
                 }
             }

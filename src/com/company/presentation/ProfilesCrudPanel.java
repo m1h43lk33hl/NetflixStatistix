@@ -88,7 +88,16 @@ public class ProfilesCrudPanel extends JPanel {
             profileCrudButton.setText("Sla op");
         }
 
-        profileCrudButton.addActionListener(new ProfilesCrudPanelActionListener(this.crudMode, this.selectProfileBox, this.selectedAccountName, profileNameTextField, profileAgeTextField, this.internalFrame));
+        String profileName = "";
+
+        try {
+            profileName = this.selectProfileBox.getSelectedItem().toString();
+        }catch (Exception e)
+        {
+
+        }
+
+        profileCrudButton.addActionListener(new ProfilesCrudPanelActionListener(this.crudMode, this.selectProfileBox, this.selectedAccountName, profileNameTextField, profileAgeTextField, this.internalFrame, profileName));
 
         thirdComponentPanel.add(profileCrudButton);
 

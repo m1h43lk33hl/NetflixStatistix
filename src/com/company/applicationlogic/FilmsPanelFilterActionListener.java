@@ -52,16 +52,8 @@ public class FilmsPanelFilterActionListener implements ActionListener {
             ErrorDialog.showErrorDialog(ErrorMessages.ACCOUNT_NOT_SELECTED);
             return;
         }
-        if(this.filmsTable.getSelectionModel().isSelectionEmpty())
-        {
-            ErrorDialog.showErrorDialog(ErrorMessages.ROW_NOT_SELECTED);
-            return;
-        }
 
         this.filmsTable.setModel(this.buildTableModel());
-
-
-
     }
 
     /**

@@ -21,6 +21,7 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
     private JTextField profileNameTextField;
     private JTextField profileAgeTextField;
     private InternalFrame internalFrame;
+    private String initialProfileName;
 
 
     /**
@@ -33,7 +34,7 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
      * @param profileAgeTextField
      * @param internalFrame
      */
-    public ProfilesCrudPanelActionListener(int crudMode, JComboBox<String> selectProfileBox, JLabel selectedAccountName, JTextField profileNameTextField, JTextField profileAgeTextField, InternalFrame internalFrame)
+    public ProfilesCrudPanelActionListener(int crudMode, JComboBox<String> selectProfileBox, JLabel selectedAccountName, JTextField profileNameTextField, JTextField profileAgeTextField, InternalFrame internalFrame, String initialProfileName)
     {
         this.crudMode = crudMode;
         this.selectProfileBox = selectProfileBox;
@@ -41,6 +42,7 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
         this.profileAgeTextField = profileAgeTextField;
         this.profileNameTextField = profileNameTextField;
         this.internalFrame = internalFrame;
+        this.initialProfileName = initialProfileName;
     }
 
 
@@ -117,11 +119,32 @@ public class ProfilesCrudPanelActionListener implements ActionListener {
         try{
             Database database = Database.getInstance();
 
-            String SQLcheck = "SELECT * FROM Profiel WHERE Profiel.AccountNaam='"+this.selectedAccountName.getText()+"' AND Profiel.Naam='"+this.profileNameTextField.getText()+"';";
-            if (database.query(SQLcheck).next()) {
-                ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_DATA_NOT_VALID);
-                return false;
+            List<String> preLoaded = new ArrayList<>();
+
+            String SQLcheck = "SELECT * FROM Profiel WHERE Profiel.AccountNaam='"+this.selectedAccountName.getText()+"';";
+            ResultSet rs = database.query(SQLcheck);
+
+            while (rs.next()) {
+                preLoaded.add(rs.getString("Naam"));
             }
+
+            String profileNameTextFieldText = this.profileNameTextField.getText();
+
+            // check if name is not edited
+            if(!profileNameTextFieldText.equals(this.initialProfileName))
+            {
+                for(String profileName : preLoaded)
+                {
+                    if(profileNameTextFieldText.equals(profileName))
+                    {
+                        // Check if its the same as preloaded
+                            ErrorDialog.showErrorDialog(ErrorMessages.PROFILE_DATA_NOT_VALID);
+                            return false;
+                    }
+
+                }
+            }
+
 
             String SQL = "UPDATE Profiel SET Naam='"+this.profileNameTextField.getText()+"', Leeftijd="+this.profileAgeTextField.getText()+" WHERE AccountNaam = '"+this.selectedAccountName.getText()+"' AND Naam='"+this.selectProfileBox.getSelectedItem().toString()+"';";
             System.out.println(SQL);

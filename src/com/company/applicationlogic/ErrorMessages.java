@@ -13,7 +13,8 @@ public enum ErrorMessages {
         ACCOUNT_NOT_VALID(6, "Er is geen valide account geselecteerd!"),
         ACCOUNT_DATA_NOT_VALID(7, "Account bestaat al of geen juiste waarden ingevoerd!"),
         LOG_DATA_NOT_VALID(8, "Log data bestaat al of geen juiste waarden ingevoerd!"),
-        PROFILE_DATA_NOT_VALID(9, "Log data bestaat al of geen juiste waarden ingevoerd!");
+        PROFILE_DATA_NOT_VALID(9, "Profiel bestaat al of geen juiste waarden ingevoerd!"),
+        LOG_DATA_PERCENTAGE_NOT_VALID(10, "Het 'percentage bekeken' moet een waarde tussen 0 en 100 hebben!");
 
 
         private final int code;

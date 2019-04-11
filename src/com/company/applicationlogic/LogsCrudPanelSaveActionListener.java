@@ -70,6 +70,13 @@ public class LogsCrudPanelSaveActionListener implements ActionListener {
      */
     private void updateEpisodeLog(String episodeLogID, String Serie, String episode, String timeSpan) {
 
+        // Check if percentage is between 0 and 100
+        if(!(Integer.parseInt(timeSpan) >= 0 && Integer.parseInt(timeSpan) <= 100)  ){
+
+            ErrorDialog.showErrorDialog(ErrorMessages.LOG_DATA_PERCENTAGE_NOT_VALID);
+            return;
+        }
+
         String SQL = "UPDATE Afleveringlog SET AfleveringID = \n" +
                 "(SELECT Aflevering.AfleveringID FROM Aflevering\n" +
                 "INNER JOIN Seizoen ON Seizoen.SeizoenID = Aflevering.SezoenID\n" +
