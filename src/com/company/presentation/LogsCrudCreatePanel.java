@@ -1,7 +1,7 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.LogsCrudCreateActionListener;
-import com.company.applicationlogic.LogsCrudCreatePanelSeriesChangeListener;
+import com.company.applicationlogic.listeners.LogsCrudCreateActionListener;
+import com.company.applicationlogic.listeners.LogsCrudCreatePanelSeriesChangeListener;
 import com.company.datastorage.Database;
 
 import javax.swing.*;

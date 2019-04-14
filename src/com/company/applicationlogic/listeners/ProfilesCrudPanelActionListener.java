@@ -1,5 +1,7 @@
-package com.company.applicationlogic;
+package com.company.applicationlogic.listeners;
 
+import com.company.applicationlogic.errorutils.ErrorDialog;
+import com.company.applicationlogic.errorutils.ErrorMessages;
 import com.company.datastorage.Database;
 import com.company.presentation.InternalFrame;
 

@@ -1,4 +1,4 @@
-package com.company.applicationlogic;
+package com.company.applicationlogic.errorutils;
 
 /**
  * Enum ErrorMessages handles ErrorMessages  

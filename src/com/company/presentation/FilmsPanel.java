@@ -1,7 +1,7 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.FilmsPanelFilterActionListener;
-import com.company.applicationlogic.FilmsPanelSelectActionListener;
+import com.company.applicationlogic.listeners.FilmsPanelFilterActionListener;
+import com.company.applicationlogic.listeners.FilmsPanelSelectActionListener;
 import com.company.datastorage.Database;
 
 import javax.swing.*;

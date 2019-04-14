@@ -1,7 +1,7 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.AccountsCrudPanelActionListener;
-import com.company.applicationlogic.AccountsPanelCrudActionListener;
+import com.company.applicationlogic.listeners.AccountsCrudPanelActionListener;
+import com.company.applicationlogic.listeners.AccountsPanelCrudActionListener;
 import com.company.datastorage.Database;
 
 import javax.swing.*;

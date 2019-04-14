@@ -1,9 +1,9 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.ProfilesPanelCrudActionListener;
-import com.company.applicationlogic.ProfilesPanelDeleteActionListener;
-import com.company.applicationlogic.ProfilesPanelSelectActionListener;
-import com.company.applicationlogic.ProfilesPanelViewLogActionListener;
+import com.company.applicationlogic.listeners.ProfilesPanelCrudActionListener;
+import com.company.applicationlogic.listeners.ProfilesPanelDeleteActionListener;
+import com.company.applicationlogic.listeners.ProfilesPanelSelectActionListener;
+import com.company.applicationlogic.listeners.ProfilesPanelViewLogActionListener;
 
 import javax.swing.*;
 import java.awt.*;

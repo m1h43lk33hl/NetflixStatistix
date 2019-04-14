@@ -1,11 +1,9 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.LogsCrudPanelCreateActionListener;
-import com.company.applicationlogic.LogsCrudPanelDeleteActionListener;
-import com.company.applicationlogic.LogsCrudPanelSaveActionListener;
+import com.company.applicationlogic.listeners.LogsCrudPanelCreateActionListener;
+import com.company.applicationlogic.listeners.LogsCrudPanelDeleteActionListener;
+import com.company.applicationlogic.listeners.LogsCrudPanelSaveActionListener;
 import com.company.datastorage.Database;
-import org.jetbrains.annotations.Contract;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
@@ -36,7 +34,6 @@ public class LogsCrudPanel extends JPanel {
         this.setName("profilesPanel");
         this.selectedAccountName = selectedAccountName;
         this.selectProfileBox = selectProfileBox;
-
     }
 
 
@@ -52,7 +49,6 @@ public class LogsCrudPanel extends JPanel {
         JPanel firstComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel secondComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel thirdComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
 
         innerBoxPanel.setLayout(new BoxLayout(innerBoxPanel, BoxLayout.Y_AXIS));
         innerBoxPanel2.setLayout(new BoxLayout(innerBoxPanel2, BoxLayout.Y_AXIS));
@@ -73,8 +69,6 @@ public class LogsCrudPanel extends JPanel {
 
         JTable table = new JTable(this.buildTableModel()){
 
-
-            @Contract(pure = true)
             public boolean isCellEditable(int rowindex, int colindex)
             {
                 try{
@@ -111,10 +105,8 @@ public class LogsCrudPanel extends JPanel {
 
         this.setSerieTitle(table);
 
-
         table.setPreferredSize(new Dimension(700, 130));
         table.setMinimumSize(new Dimension(700, 130));
-
 
         JScrollPane tablePane = new JScrollPane(table);
         tablePane.setPreferredSize(new Dimension(600, 130));
@@ -125,7 +117,6 @@ public class LogsCrudPanel extends JPanel {
 
         firstComponentPanel.add(tablePane);
         firstComponentPanel.add(newLogButton);
-
 
         JButton saveLogButton = new JButton("Opslaan");
         saveLogButton.addActionListener(new LogsCrudPanelSaveActionListener(table, this.selectProfileBox, this.selectedAccountName));

@@ -1,6 +1,6 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.ProfilesCrudPanelActionListener;
+import com.company.applicationlogic.listeners.ProfilesCrudPanelActionListener;
 import com.company.datastorage.Database;
 
 import javax.swing.*;

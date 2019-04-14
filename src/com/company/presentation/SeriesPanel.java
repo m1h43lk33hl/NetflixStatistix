@@ -1,7 +1,7 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.SeriesPanelFilterActionListener;
-import com.company.applicationlogic.SeriesPanelSelectActionListener;
+import com.company.applicationlogic.listeners.SeriesPanelFilterActionListener;
+import com.company.applicationlogic.listeners.SeriesPanelSelectActionListener;
 import com.company.datastorage.Database;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;

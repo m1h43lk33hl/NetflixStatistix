@@ -1,4 +1,4 @@
-package com.company.applicationlogic;
+package com.company.applicationlogic.errorutils;
 
 import javax.swing.*;
 
@@ -8,6 +8,7 @@ import javax.swing.*;
 public class ErrorDialog {
 
     /**
+     * Shows a dialog with an error message.
      *
      * @param errorMessages
      */

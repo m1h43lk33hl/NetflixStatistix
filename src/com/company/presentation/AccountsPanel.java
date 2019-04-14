@@ -1,9 +1,9 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.AccountsPanelCrudActionListener;
-import com.company.applicationlogic.AccountsPanelDeleteActionListener;
-import com.company.applicationlogic.AccountsPanelFilterActionListener;
-import com.company.applicationlogic.AccountsPanelSelectActionListener;
+import com.company.applicationlogic.listeners.AccountsPanelCrudActionListener;
+import com.company.applicationlogic.listeners.AccountsPanelDeleteActionListener;
+import com.company.applicationlogic.listeners.AccountsPanelFilterActionListener;
+import com.company.applicationlogic.listeners.AccountsPanelSelectActionListener;
 import com.company.datastorage.Database;
 
 import javax.swing.*;

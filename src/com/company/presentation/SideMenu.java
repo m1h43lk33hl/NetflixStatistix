@@ -1,6 +1,6 @@
 package com.company.presentation;
 
-import com.company.applicationlogic.SideMenuButtonActionListener;
+import com.company.applicationlogic.listeners.SideMenuButtonActionListener;
 
 import javax.swing.*;
 import java.awt.*;

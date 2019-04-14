@@ -1,4 +1,4 @@
-package com.company.applicationlogic;
+package com.company.applicationlogic.listeners;
 
 import com.company.presentation.MainPanel;
 import com.company.presentation.SideMenu;
