@@ -3,37 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/FilmsPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/FilmsPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudCreateActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreateActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudCreatePanelSeriesChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreatePanelSeriesChangeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudPanelCreateActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudPanelCreateActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/LogsCrudPanelSaveActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudPanelSaveActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/ProfilesCrudPanelActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelCrudActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/ProfilesPanelCrudActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelDeleteActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/ProfilesPanelDeleteActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/ProfilesPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelViewLogActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/ProfilesPanelViewLogActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/SeriesPanelFilterActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/SeriesPanelFilterActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/SeriesPanelSelectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/SeriesPanelSelectActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/SideMenuButtonActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/SideMenuButtonActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/AccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/AccountsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/FilmsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/FilmsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/LogsCrudCreatePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/LogsCrudCreatePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/LogsCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/LogsCrudPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/ProfilesCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/ProfilesCrudPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/ProfilesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/ProfilesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/SeriesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/SeriesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/SideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/SideMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/datastorage/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/datastorage/Database.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,24 +12,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelSelectActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="119">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -71,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelFilterActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="119">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreateActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="119">
               <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -95,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelCrudActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="68">
               <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -107,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelSelectActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="119">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudPanelCreateActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="119">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -131,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreatePanelSeriesChangeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="119">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,17 +115,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="553">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="238">
+              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -246,7 +227,6 @@
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/ErrorMessages.java" />
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/ProfilesPanelViewLogActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/SideMenuButtonActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/datastorage/Database.java" />
         <option value="$PROJECT_DIR$/src/com/company/presentation/ProfilesPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/presentation/SeriesPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/AccountsCrudPanelActionListener.java" />
@@ -264,6 +244,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
         <option value="$PROJECT_DIR$/src/com/company/presentation/LogsCrudPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java" />
+        <option value="$PROJECT_DIR$/src/com/company/datastorage/Database.java" />
       </list>
     </option>
   </component>
@@ -279,8 +260,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,29 +279,6 @@
               <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="applicationlogic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="applicationlogic" type="462c0819:PsiDirectoryNode" />
-              <item name="errorutils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="applicationlogic" type="462c0819:PsiDirectoryNode" />
-              <item name="listeners" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
@@ -346,7 +304,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555246800651" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555260164667" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -414,12 +372,13 @@
       <workItem from="1554887481338" duration="2196000" />
       <workItem from="1554973528873" duration="12939000" />
       <workItem from="1555060345445" duration="5680000" />
-      <workItem from="1555246527258" duration="263000" />
+      <workItem from="1555246527258" duration="2810000" />
+      <workItem from="1555253920770" duration="2709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171193000" />
+    <option name="totallyTimeSpent" value="176449000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +400,7 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="DB Browser" order="6" weight="0.3295302" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.32147652" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.3261745" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
@@ -464,7 +423,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.09060403" />
       <window_info anchor="right" id="PlantUML" order="9" weight="0.3295302" />
     </layout>
     <layout-to-restore>
@@ -757,13 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelFilterActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -786,7 +738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="119">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -796,7 +748,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelSelectActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="119">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -806,7 +758,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelFilterActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="119">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -816,7 +768,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreateActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="119">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -826,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelCrudActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="68">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -836,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelSelectActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="119">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -846,7 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudPanelCreateActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="119">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -856,7 +808,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreatePanelSeriesChangeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="119">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -864,17 +816,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="238">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        <state relative-caret-position="553">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
         </state>
       </provider>
     </entry>

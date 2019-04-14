@@ -76,6 +76,4 @@ public class Database {
         // Execute query
         statement.executeUpdate(query);
     }
-
-
 }
