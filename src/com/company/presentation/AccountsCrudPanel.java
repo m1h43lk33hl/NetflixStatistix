@@ -2,13 +2,8 @@ package com.company.presentation;
 
 import com.company.applicationlogic.listeners.AccountsCrudPanelActionListener;
 import com.company.applicationlogic.listeners.AccountsPanelCrudActionListener;
-import com.company.datastorage.Database;
-
 import javax.swing.*;
 import java.awt.*;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Class AccountsPanel handles components within the accountspanel
@@ -80,7 +75,6 @@ public class AccountsCrudPanel extends JPanel {
         JPanel innerButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         // Second panel
-        JPanel someComponentPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel innerFlowPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel innerBoxPanel2 = new JPanel();
         innerBoxPanel2.setLayout(new BoxLayout(innerBoxPanel2, BoxLayout.Y_AXIS));
@@ -150,18 +144,10 @@ public class AccountsCrudPanel extends JPanel {
         JButton createProfileButton = new JButton("Nieuw");
 
         createProfileButton.addActionListener(new AccountsPanelCrudActionListener(0, selectAccountButton, selectAccountBox));
-
         innerFlowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel filterAccountsLabel = new JLabel("Filter accounts");
-        JLabel filterAccountsLabelBasedOn = new JLabel("aantal profielen in account");
         JTextField filterProfileAmountTextField = new JTextField();
         filterProfileAmountTextField.setPreferredSize(new Dimension(70, 25));
-        JButton filterAccountButton = new JButton("Filter");
-        String[] accountFilterBoxOptions = {"Gelijk aan", "Kleiner dan", "Groter dan"};
-        JComboBox<String> accountFilterBox = new JComboBox<>(accountFilterBoxOptions);
-
-        JLabel filterOptionsLabel = new JLabel("Filter opties:");
 
         // Create and add filler panel
         fillerPanel.add(Box.createRigidArea(new Dimension(0,15))); // Create space between buttons
@@ -216,30 +202,6 @@ public class AccountsCrudPanel extends JPanel {
 
         this.add(innerFlowPanel2);
 
-    }
-
-    /**
-     * Returns a list of account names of accounts by selected profile
-     *
-     * @return
-     */
-    private List<String> returnAccountNames() {
-        List<String> accountList = new ArrayList<String>();
-
-        try {
-            Database db = Database.getInstance();
-            ResultSet rs = db.query("SELECT Naam FROM Account");
-
-            while (rs.next()) {
-                accountList.add(rs.getString("Naam"));
-            }
-
-            return accountList;
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
     }
 
     /**

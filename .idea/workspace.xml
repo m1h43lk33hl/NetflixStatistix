@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ae22f66-6aca-491d-9d86-845031b8a94b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/datastorage/DatabaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetflixStatistix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixStatistix.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/datastorage/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/datastorage/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,10 +33,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelSelectActionListener.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,61 +45,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelFilterActionListener.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudCreateActionListener.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/presentation/NetflixStatistixUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelCrudActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/FilmsPanelSelectActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/LogsCrudPanelCreateActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="107">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -115,17 +77,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state>
+              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+            <state relative-caret-position="279">
+              <caret line="73" selection-start-line="73" selection-end-line="76" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/DatabaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/presentation/MainPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -139,21 +119,31 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Arquillian JUnit Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>object</find>
-      <find>delete</find>
-      <find>JOptionPane</find>
-      <find>bewerk</find>
       <find>accountnamelab</find>
       <find>insert</find>
       <find>selectaccountbutt</find>
@@ -180,12 +170,16 @@
       <find>System.out.pr</find>
       <find>@cont</find>
       <find>contract</find>
+      <find>getinstan</find>
+      <find>query</find>
+      <find>this.connec</find>
+      <find>SELECT</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\root\IdeaProjects\NetflixStatistix\src\com\company</dir>
-      <dir>C:\Users\root\Documents\Development\NetflixStatistix\src\com\company</dir>
       <dir>C:\Users\root\Documents\Development\NetflixStatistix\src\com\company\applicationlogic</dir>
       <dir>C:\Users\root\Documents\Development\NetflixStatistix</dir>
+      <dir>C:\Users\root\Documents\Development\NetflixStatistix\src\com\company</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -194,9 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/FilmsPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/company/FilmsPanelSelectActionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/company/FilmsPanelFilterActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/AccountsPanelFilterActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/AccountsPanelSelectActionListener.java" />
         <option value="$PROJECT_DIR$/src/com/company/AccountsCrudPanel.java" />
@@ -245,6 +236,9 @@
         <option value="$PROJECT_DIR$/src/com/company/presentation/LogsCrudPanel.java" />
         <option value="$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java" />
         <option value="$PROJECT_DIR$/src/com/company/datastorage/Database.java" />
+        <option value="$PROJECT_DIR$/src/com/company/datastorage/DatabaseTest.java" />
+        <option value="$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java" />
       </list>
     </option>
   </component>
@@ -285,7 +279,7 @@
               <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="datastorage" type="462c0819:PsiDirectoryNode" />
+              <item name="applicationlogic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
@@ -304,7 +298,11 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555260164667" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555262240955" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -314,6 +312,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.company.datastorage" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.company" />
     </key>
@@ -334,13 +338,79 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="NetflixStatistix" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NetflixStatistix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.datastorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.datastorage" />
+      <option name="MAIN_CLASS_NAME" value="com.company.datastorage.DatabaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseTest.getInstance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NetflixStatistix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.datastorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.datastorage" />
+      <option name="MAIN_CLASS_NAME" value="com.company.datastorage.DatabaseTest" />
+      <option name="METHOD_NAME" value="getInstance" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NetflixStatistix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.datastorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.datastorage" />
+      <option name="MAIN_CLASS_NAME" value="com.company.datastorage.DatabaseTest" />
+      <option name="METHOD_NAME" value="query" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseTest.queryDDL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NetflixStatistix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.datastorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.datastorage" />
+      <option name="MAIN_CLASS_NAME" value="com.company.datastorage.DatabaseTest" />
+      <option name="METHOD_NAME" value="queryDDL" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -348,6 +418,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DatabaseTest" />
+        <item itemvalue="JUnit.DatabaseTest.queryDDL" />
+        <item itemvalue="JUnit.DatabaseTest.query" />
+        <item itemvalue="JUnit.DatabaseTest.getInstance" />
       </list>
     </recent_temporary>
   </component>
@@ -373,12 +447,44 @@
       <workItem from="1554973528873" duration="12939000" />
       <workItem from="1555060345445" duration="5680000" />
       <workItem from="1555246527258" duration="2810000" />
-      <workItem from="1555253920770" duration="2709000" />
+      <workItem from="1555253920770" duration="4870000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="DatabaseTest_query - 2019.04.14 at 18h 57m 36s.xml">
+      <configuration name="DatabaseTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_query - 2019.04.14 at 18h 58m 39s.xml">
+      <configuration name="DatabaseTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_queryDDL - 2019.04.14 at 19h 02m 43s.xml">
+      <configuration name="DatabaseTest.queryDDL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_queryDDL - 2019.04.14 at 19h 03m 14s.xml">
+      <configuration name="DatabaseTest.queryDDL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_queryDDL - 2019.04.14 at 19h 05m 10s.xml">
+      <configuration name="DatabaseTest.queryDDL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_queryDDL - 2019.04.14 at 19h 06m 17s.xml">
+      <configuration name="DatabaseTest.queryDDL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_queryDDL - 2019.04.14 at 19h 07m 19s.xml">
+      <configuration name="DatabaseTest.queryDDL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest_queryDDL - 2019.04.14 at 19h 07m 28s.xml">
+      <configuration name="DatabaseTest.queryDDL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest - 2019.04.14 at 19h 08m 45s.xml">
+      <configuration name="DatabaseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DatabaseTest - 2019.04.14 at 19h 14m 54s.xml">
+      <configuration name="DatabaseTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176449000" />
+    <option name="totallyTimeSpent" value="178610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,7 +497,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -542,16 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/presentation/InternalFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -559,20 +654,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/presentation/MainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/presentation/NetflixStatistixUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
@@ -607,13 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -736,16 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsPanelSelectActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -816,6 +880,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="73" selection-start-line="73" selection-end-line="76" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/DatabaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/presentation/MainPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -823,17 +915,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/errorutils/ErrorMessages.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/presentation/AccountsCrudPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="323">
+          <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/datastorage/Database.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/applicationlogic/listeners/AccountsCrudPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        <state relative-caret-position="51">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/presentation/NetflixStatistixUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
         </state>
       </provider>
     </entry>

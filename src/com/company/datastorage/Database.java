@@ -24,7 +24,7 @@ public class Database {
      * @throws SQLException
      * @throws ClassNotFoundException
      */
-    private Database() throws SQLException, ClassNotFoundException {
+    protected Database() throws SQLException, ClassNotFoundException {
 
         String connectionUrl = "jdbc:sqlserver://"+this.host+";user="+this.user+";databaseName="+this.databaseName+";integratedSecurity=true;";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

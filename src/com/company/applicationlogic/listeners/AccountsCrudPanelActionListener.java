@@ -180,6 +180,4 @@ public class AccountsCrudPanelActionListener implements ActionListener  {
             return null;
         }
     }
-
-
 }
